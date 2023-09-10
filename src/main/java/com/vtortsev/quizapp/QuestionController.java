@@ -9,6 +9,7 @@ import org.springframework.web.bind.annotation.RestController;
 public class QuestionController {
     @GetMapping("allQuestions")
     public String getAllQuestions(){
+        int x = 6;
         return  "HI, Здесь твои вопросы";
     }
 }
