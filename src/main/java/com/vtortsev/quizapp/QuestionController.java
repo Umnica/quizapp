@@ -10,6 +10,7 @@ public class QuestionController {
     @GetMapping("allQuestions")
     public String getAllQuestions(){
         int x = 6;
+        int t = 5;
         return  "HI, Здесь твои вопросы";
     }
 }
