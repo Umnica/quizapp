@@ -7,7 +7,6 @@ import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
 import org.springframework.stereotype.Service;
 
-import java.util.ArrayList;
 import java.util.List;
 
 // сервис какая то логика внутри
@@ -17,30 +16,15 @@ public class QuestionService {
     @Autowired
     QuestionDao questionDao;
 
-    public ResponseEntity<List<Question>> getAllQuestions() {
-        try {
-            return new ResponseEntity<>(questionDao.findAll(), HttpStatus.OK);
-        } catch (Exception ex){
-            ex.printStackTrace();
-        }
-        return new ResponseEntity<>(new ArrayList<>(), HttpStatus.BAD_REQUEST);
+    public List<Question> getAllQuestions() {
+        return questionDao.findAll();
     }
 
-    public ResponseEntity<List<Question>> getQuestionsByCategory(String category) {
-        try{
-            return new ResponseEntity<>(questionDao.findByCategory(category),HttpStatus.OK);
-        } catch (Exception ex){
-            ex.printStackTrace();
-        }
-        return new ResponseEntity<>(new ArrayList<>(), HttpStatus.BAD_REQUEST);
+    public List<Question> getQuestionsByCategory(String category) {
+        return questionDao.findByCategory(category);
     }
-    public ResponseEntity<List<Question>> getQuestionsByLevel(String level) {
-        try{
-            return new ResponseEntity<>(questionDao.findByLevel(level),HttpStatus.OK);
-        } catch (Exception ex){
-            ex.printStackTrace();
-            return new ResponseEntity<>(new ArrayList<>(), HttpStatus.BAD_REQUEST);
-        }
+    public List<Question> getQuestionsByLevel(String level) {
+        return questionDao.findByLevel(level);
     }
     public ResponseEntity<String> addQuestion(Question question) {
         // тут можно использовать коды состояния для вывода ошибки
@@ -53,13 +37,8 @@ public class QuestionService {
             return new ResponseEntity<>("fail", HttpStatus.BAD_REQUEST);
         }
     }
-    public ResponseEntity<String> deleteQuestion(Integer id) {
-        try{
-            questionDao.deleteById(id);
-            return new ResponseEntity<>("success",HttpStatus.OK);
-        } catch (Exception ex){
-            ex.printStackTrace();
-            return new ResponseEntity<>("fail", HttpStatus.BAD_REQUEST);
-        }
+    public String deleteQuestion(Integer id) {
+        questionDao.deleteById(id);
+        return "success";
     }
 }
