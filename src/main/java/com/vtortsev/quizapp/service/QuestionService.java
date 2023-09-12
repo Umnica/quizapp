@@ -1,6 +1,6 @@
 package com.vtortsev.quizapp.service;
 
-import com.vtortsev.quizapp.Question;
+import com.vtortsev.quizapp.entities.Question;
 import com.vtortsev.quizapp.dao.QuestionDao;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.HttpStatus;

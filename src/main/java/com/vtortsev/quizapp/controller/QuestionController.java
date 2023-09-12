@@ -1,6 +1,6 @@
 package com.vtortsev.quizapp.controller;
 
-import com.vtortsev.quizapp.Question;
+import com.vtortsev.quizapp.entities.Question;
 import com.vtortsev.quizapp.service.QuestionService;
 import lombok.Data;
 import org.springframework.beans.factory.annotation.Autowired;

@@ -1,6 +1,6 @@
 package com.vtortsev.quizapp.dao;
 
-import com.vtortsev.quizapp.Question;
+import com.vtortsev.quizapp.entities.Question;
 import org.springframework.data.jpa.repository.JpaRepository;
 import org.springframework.stereotype.Repository;
 
