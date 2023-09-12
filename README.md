@@ -10,6 +10,8 @@ Spring-boot приложение
 4. spring-boot-starter-data-jpa
 5. spring-boot-starter-web
 6. spring-boot-starter-test
+7. git flow
+8. Postman
 
 таблица postgres:
 
