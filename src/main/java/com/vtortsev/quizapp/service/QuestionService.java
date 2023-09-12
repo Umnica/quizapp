@@ -2,6 +2,7 @@ package com.vtortsev.quizapp.service;
 
 import com.vtortsev.quizapp.Question;
 import com.vtortsev.quizapp.dao.QuestionDao;
+import org.jetbrains.annotations.NotNull;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
@@ -19,4 +20,13 @@ public class QuestionService {
     }
     public List<Question> getQuestionsByCategory(String category) { return questionDao.findByCategory(category); }
     public List<Question> getQuestionsByLevel(String level) { return questionDao.findByLevel(level); }
+    public String addQuestion(Question question) {
+        // тут можно использовать коды состояния для вывода ошибки
+        questionDao.save(question);
+        return "success";
+    }
+    public String deleteQuestion(Integer id) {
+        questionDao.deleteById(id);
+        return "success";
+    }
 }
