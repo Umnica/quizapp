@@ -13,7 +13,7 @@ import java.util.List;
 @RequestMapping("/questions") //у всех заросах в этом блоке контролера будет впереди /questions
 public class QuestionsController {
     // spring сам создаст бин и поместит его в переменную
-    private QuestionsService questionService;
+    private final QuestionsService questionService;
     @Autowired
     public QuestionsController(QuestionsService questionService){
         this.questionService = questionService;

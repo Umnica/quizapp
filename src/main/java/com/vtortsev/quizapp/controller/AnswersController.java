@@ -14,7 +14,7 @@ import java.util.List;
 @RestController
 @RequestMapping("/answers")
 public class AnswersController {
-    private AnswersService answersService;
+    private final AnswersService answersService;
     @Autowired
     public AnswersController(AnswersService answersService) { this.answersService = answersService; }
 

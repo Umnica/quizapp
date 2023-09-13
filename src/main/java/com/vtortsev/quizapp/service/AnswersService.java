@@ -8,7 +8,7 @@ import org.springframework.stereotype.Service;
 import java.util.List;
 @Service
 public class AnswersService {
-    private AnswersDao answersDao;
+    private final AnswersDao answersDao;
     @Autowired
     public AnswersService(AnswersDao answersDao) { this.answersDao = answersDao; }
 

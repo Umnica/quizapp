@@ -10,7 +10,7 @@ import java.util.List;
 @Service // сервис какая то логика внутри
 public class QuestionsService {
     // это объект для работы с бд DataAccessObject
-    private QuestionsDao questionsDao;
+    private final QuestionsDao questionsDao;
 
     @Autowired
     public QuestionsService(QuestionsDao questionsDao) {
