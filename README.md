@@ -15,23 +15,11 @@ Spring-boot
 7. git flow
 8. Postman
 
-таблица postgres:
+таблица postgres drawio:
 
-public class Questions
-* private Integer id;
-* private String category;
-* private String level;
-* private String questionText;
+https://drive.google.com/file/d/1TNbW5roAg_QyU7A37nOQrmJ9BN-CzEFV/view
 
+запросы:
 
-
-public class Answers
-* private Integer id;
-* private String answerText;
-* private Integer questionId;
-
-
-
-
-
+https://docs.google.com/document/d/13tvD69huolzxvXVb6edLsMMx9EQM_bZFtiO9L0uyx8E/edit?usp=sharing
 
