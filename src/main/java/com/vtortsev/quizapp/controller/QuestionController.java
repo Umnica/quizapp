@@ -8,7 +8,6 @@ import org.springframework.web.bind.annotation.*;
 
 import java.util.List;
 
-
 @Slf4j
 @RestController // главный контролер, по запросам пользователя выводит файл ему
 @RequestMapping("/question") //у всех заросах в этом блоке контролера будет впереди /question
@@ -23,7 +22,6 @@ public class QuestionController {
     // хочу вернуть объект ответа пользователю и статус ошибки
     @GetMapping("/all")
     public List<Question> getAllQuestions() {
-        log.info("Вызван метод getAllQuestions()");
         return questionService.getAllQuestions();
     }
 
@@ -44,9 +42,8 @@ public class QuestionController {
     public Question addQuestion(@RequestBody Question question) {
         return questionService.addQuestion(question);
     }
-    @GetMapping("/delete")
-    public void deleteQuestion(@RequestBody Question question) {
-        questionService.deleteQuestion(question);
+    @GetMapping("/delete/{id}")
+    public void deleteQuestion(@PathVariable Integer id) {
+        questionService.deleteQuestion(id);
     }
-
 }

@@ -2,10 +2,11 @@ package com.vtortsev.quizapp.service;
 
 import com.vtortsev.quizapp.entities.Question;
 import com.vtortsev.quizapp.dao.QuestionDao;
+import lombok.extern.slf4j.Slf4j;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 import java.util.List;
-
+@Slf4j
 @Service // сервис какая то логика внутри
 public class QuestionService {
     // это объект для работы с бд DataAccessObject
@@ -31,7 +32,8 @@ public class QuestionService {
         // https://developer.mozilla.org/en-US/docs/Web/HTTP/Status#information_responses
         return questionDao.save(question);
     }
-    public void deleteQuestion(Question question) {
-        questionDao.delete(question);
+
+    public void deleteQuestion(Integer id) {
+        questionDao.deleteById(id);
     }
 }
