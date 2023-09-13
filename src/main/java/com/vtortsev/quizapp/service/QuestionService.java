@@ -3,66 +3,35 @@ package com.vtortsev.quizapp.service;
 import com.vtortsev.quizapp.entities.Question;
 import com.vtortsev.quizapp.dao.QuestionDao;
 import org.springframework.beans.factory.annotation.Autowired;
-import org.springframework.http.HttpStatus;
-import org.springframework.http.ResponseEntity;
 import org.springframework.stereotype.Service;
-
-import java.util.ArrayList;
 import java.util.List;
 
-// сервис какая то логика внутри
-@Service
+@Service // сервис какая то логика внутри
 public class QuestionService {
     // это объект для работы с бд DataAccessObject
-    private QuestionDao questionDao;
+    private final QuestionDao questionDao;
     @Autowired
     public QuestionService(QuestionDao questionDao) {
         this.questionDao = questionDao;
     }
 
-    public ResponseEntity<List<Question>> getAllQuestions() {
-        try {
-            return new ResponseEntity<>(questionDao.findAll(), HttpStatus.OK);
-        } catch (Exception ex){
-            ex.printStackTrace();
-        }
-        return new ResponseEntity<>(new ArrayList<>(), HttpStatus.BAD_REQUEST);
+    public List<Question> getAllQuestions() {
+        return questionDao.findAll();
     }
 
-    public ResponseEntity<List<Question>> getQuestionsByCategory(String category) {
-        try{
-            return new ResponseEntity<>(questionDao.findByCategory(category),HttpStatus.OK);
-        } catch (Exception ex){
-            ex.printStackTrace();
-        }
-        return new ResponseEntity<>(new ArrayList<>(), HttpStatus.BAD_REQUEST);
+    public List<Question> getQuestionsByCategory(String category) {
+        return questionDao.findByCategory(category);
     }
-    public ResponseEntity<List<Question>> getQuestionsByLevel(String level) {
-        try{
-            return new ResponseEntity<>(questionDao.findByLevel(level),HttpStatus.OK);
-        } catch (Exception ex){
-            ex.printStackTrace();
-            return new ResponseEntity<>(new ArrayList<>(), HttpStatus.BAD_REQUEST);
-        }
+    public List<Question> getQuestionsByLevel(String level) {
+        return questionDao.findByLevel(level);
     }
-    public ResponseEntity<String> addQuestion(Question question) {
+
+    public void addQuestion(Question question) {
         // тут можно использовать коды состояния для вывода ошибки
         // https://developer.mozilla.org/en-US/docs/Web/HTTP/Status#information_responses
-        try{
-            questionDao.save(question);
-            return new ResponseEntity<>("success",HttpStatus.CREATED);
-        } catch (Exception ex) {
-            ex.printStackTrace();
-            return new ResponseEntity<>("fail", HttpStatus.BAD_REQUEST);
-        }
+        questionDao.save(question);
     }
-    public ResponseEntity<String> deleteQuestion(Integer id) {
-        try{
-            questionDao.deleteById(id);
-            return new ResponseEntity<>("success",HttpStatus.OK);
-        } catch (Exception ex){
-            ex.printStackTrace();
-            return new ResponseEntity<>("fail", HttpStatus.BAD_REQUEST);
-        }
+    public void deleteQuestion(Integer id) {
+        questionDao.deleteById(id);
     }
 }
