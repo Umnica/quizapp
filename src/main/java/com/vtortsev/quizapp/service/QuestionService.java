@@ -26,12 +26,12 @@ public class QuestionService {
         return questionDao.findByLevel(level);
     }
 
-    public void addQuestion(Question question) {
+    public Question addQuestion(Question question) {
         // тут можно использовать коды состояния для вывода ошибки
         // https://developer.mozilla.org/en-US/docs/Web/HTTP/Status#information_responses
-        questionDao.save(question);
+        return questionDao.save(question);
     }
-    public void deleteQuestion(Integer id) {
-        questionDao.deleteById(id);
+    public void deleteQuestion(Question question) {
+        questionDao.delete(question);
     }
 }
