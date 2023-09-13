@@ -1,4 +1,4 @@
-package com.vtortsev.quizapp;
+package com.vtortsev.quizapp.entities;
 
 import jakarta.persistence.*;
 import lombok.Data;
