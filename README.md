@@ -5,7 +5,6 @@ Spring-boot
 мое первое приложение crud
 
 
-
 включает в себя работу с:
 1. postgresql
 2. lombok (красатульки в IntelliJ IDEA) исп. @Data
@@ -18,26 +17,21 @@ Spring-boot
 
 таблица postgres:
 
-public class Question
-
-* @Id
-@GeneratedValue(strategy = GenerationType.IDENTITY)
-private Integer id;
-
+public class Questions
+* private Integer id;
 * private String category;
-
 * private String level;
-
 * private String questionText;
 
-* private String rightAnswer;
 
-* private String option_1;
 
-* private String option_2;
+public class Answers
+* private Integer id;
+* private String answerText;
+* private Integer questionId;
 
-* private String option_3;
 
-* private String option_4;
+
+
 
 
