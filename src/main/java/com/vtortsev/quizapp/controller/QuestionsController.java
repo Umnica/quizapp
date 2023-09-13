@@ -11,11 +11,11 @@ import java.util.List;
 @Slf4j
 @RestController // главный контролер, по запросам пользователя выводит файл ему
 @RequestMapping("/questions") //у всех заросах в этом блоке контролера будет впереди /questions
-public class QuestionController {
+public class QuestionsController {
     // spring сам создаст бин и поместит его в переменную
     private QuestionsService questionService;
     @Autowired
-    public QuestionController(QuestionsService questionService){
+    public QuestionsController(QuestionsService questionService){
         this.questionService = questionService;
     }
 
