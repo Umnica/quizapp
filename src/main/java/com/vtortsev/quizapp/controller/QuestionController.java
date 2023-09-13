@@ -4,7 +4,6 @@ import com.vtortsev.quizapp.entities.Question;
 import com.vtortsev.quizapp.service.QuestionService;
 import lombok.extern.slf4j.Slf4j;
 import org.springframework.beans.factory.annotation.Autowired;
-import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.*;
 
 import java.util.List;
@@ -24,6 +23,7 @@ public class QuestionController {
     // хочу вернуть объект ответа пользователю и статус ошибки
     @GetMapping("/all")
     public List<Question> getAllQuestions() {
+        log.info("Вызван метод getAllQuestions()");
         return questionService.getAllQuestions();
     }
 
