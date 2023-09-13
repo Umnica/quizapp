@@ -14,8 +14,11 @@ import java.util.List;
 @Service
 public class QuestionService {
     // это объект для работы с бд DataAccessObject
+    private QuestionDao questionDao;
     @Autowired
-    QuestionDao questionDao;
+    public QuestionService(QuestionDao questionDao) {
+        this.questionDao = questionDao;
+    }
 
     public ResponseEntity<List<Question>> getAllQuestions() {
         try {

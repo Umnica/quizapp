@@ -13,8 +13,11 @@ import java.util.List;
 @RequestMapping("/question") //у всех заросах в этом блоке контролера будет впереди /question
 public class QuestionController {
     // spring сам создаст бин и поместит его в переменную
+    private QuestionService questionService;
     @Autowired
-    QuestionService questionService;
+    public QuestionController(QuestionService questionService){
+        this.questionService = questionService;
+    }
 
     // хочу вернуть объект ответа пользователю и статус ошибки
     @GetMapping("/all")
