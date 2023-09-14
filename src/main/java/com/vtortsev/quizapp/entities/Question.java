@@ -21,7 +21,7 @@ public class Question {
 
     @ManyToMany
     @JoinTable(
-            name = "question_category",
+            name = "t_question_category",
             joinColumns = @JoinColumn(name = "question_id"),
             inverseJoinColumns = @JoinColumn(name = "category_id")
     )
