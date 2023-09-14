@@ -8,7 +8,7 @@ import org.springframework.web.bind.annotation.*;
 
 import java.util.List;
 
-@Slf4j
+
 @RestController // главный контролер, по запросам пользователя выводит файл ему
 @RequestMapping("/questions") //у всех заросах в этом блоке контролера будет впереди /questions
 public class QuestionController {
@@ -25,11 +25,11 @@ public class QuestionController {
         return questionService.getAllQuestions();
     }
 
-    @GetMapping("/category/{category}")
-    @ResponseBody // Указываем, что результат должен быть сериализован в JSON
-    public List<Question> getQuestionByCategory(@PathVariable String category){
-        return questionService.getQuestionByCategory(category);
-    }
+    //@GetMapping("/category/{category}")
+    //@ResponseBody // Указываем, что результат должен быть сериализован в JSON
+    //public List<Question> getQuestionByCategory(@PathVariable String category){
+    //    return questionService.getQuestionByCategory(category);
+    //}
 
     @GetMapping("/level/{level}")
     @ResponseBody

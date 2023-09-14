@@ -2,11 +2,10 @@ package com.vtortsev.quizapp.service;
 
 import com.vtortsev.quizapp.dao.QuestionDao;
 import com.vtortsev.quizapp.entities.Question;
-import lombok.extern.slf4j.Slf4j;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 import java.util.List;
-@Slf4j
+
 @Service // сервис какая то логика внутри
 public class QuestionService {
     // это объект для работы с бд DataAccessObject
@@ -23,9 +22,9 @@ public class QuestionService {
         return questionDao.findAll();
     }
 
-    public List<Question> getQuestionByCategory(String category) {
-        return questionDao.findByCategory(category);
-    }
+    //public List<Question> getQuestionByCategory(String category) {
+    //    return questionDao.findByCategory(category);
+    //}
     public List<Question> getQuestionByLevel(String level) {
         return questionDao.findByLevel(level);
     }
