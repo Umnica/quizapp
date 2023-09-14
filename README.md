@@ -5,7 +5,6 @@ Spring-boot
 мое первое приложение crud
 
 
-
 включает в себя работу с:
 1. postgresql
 2. lombok (красатульки в IntelliJ IDEA) исп. @Data
@@ -16,28 +15,11 @@ Spring-boot
 7. git flow
 8. Postman
 
-таблица postgres:
+таблица postgres drawio:
 
-public class Question
+https://drive.google.com/file/d/1TNbW5roAg_QyU7A37nOQrmJ9BN-CzEFV/view
 
-* @Id
-@GeneratedValue(strategy = GenerationType.IDENTITY)
-private Integer id;
+запросы:
 
-* private String category;
-
-* private String level;
-
-* private String questionText;
-
-* private String rightAnswer;
-
-* private String option_1;
-
-* private String option_2;
-
-* private String option_3;
-
-* private String option_4;
-
+https://docs.google.com/document/d/13tvD69huolzxvXVb6edLsMMx9EQM_bZFtiO9L0uyx8E/edit?usp=sharing
 
