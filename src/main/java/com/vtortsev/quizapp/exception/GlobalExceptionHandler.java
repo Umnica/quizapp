@@ -23,4 +23,14 @@ public class GlobalExceptionHandler extends ResponseEntityExceptionHandler {
         // Возвращаем статус 400 и сообщение об ошибке
         return ResponseEntity.status(HttpStatus.BAD_REQUEST).body("An error occurred: " + ex.getMessage());
     }
+
+    // Обработчик для исключений типа Error
+    @ExceptionHandler(Error.class)
+    public ResponseEntity<String> handleError(Error error) {
+        // Логируем ошибку
+        logger.error("An error occurred: {}", error.getMessage());
+
+        // Возвращаем статус 400 и сообщение об ошибке
+        return ResponseEntity.status(HttpStatus.BAD_REQUEST).body("An error occurred: " + error.getMessage());
+    }
 }
