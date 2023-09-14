@@ -25,11 +25,14 @@ public class QuestionController {
         return questionService.getAllQuestions();
     }
 
-    //@GetMapping("/category/{category}")
-    //@ResponseBody // Указываем, что результат должен быть сериализован в JSON
-    //public List<Question> getQuestionByCategory(@PathVariable String category){
-    //    return questionService.getQuestionByCategory(category);
-    //}
+
+
+    @GetMapping("/category/{categoryName}")
+    @ResponseBody // Указываем, что результат должен быть сериализован в JSON
+    public List<Question> getQuestionByCategory(@PathVariable String category){
+        return questionService.getQuestionByCategory(category);
+    }
+
 
     @GetMapping("/level/{level}")
     @ResponseBody
