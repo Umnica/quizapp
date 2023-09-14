@@ -13,7 +13,7 @@ public class GlobalExceptionHandler {
     @ExceptionHandler(Exception.class)//если возникает любое исключение
     @PostMapping("/add")
     public ResponseEntity<String> handleException(Exception ex) {
-        //мы возвращаем ответ со статусом 500 и сообщением "An error occurred"
+        //возвращает ответ со статусом 500 и сообщением "An error occurred"
         return ResponseEntity.status(HttpStatus.INTERNAL_SERVER_ERROR).body("An error occurred");
         //добавить `@RequestMapping` или `@PostMapping`
     }

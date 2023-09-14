@@ -29,24 +29,15 @@ public class QuestionController {
 
     @GetMapping("/category/{category}")
     @ResponseBody // Указываем, что результат должен быть сериализован в JSON
-    public List<Question> getQuestionByCategory(@PathVariable String category){
-        return questionService.getQuestionByCategory(category);
-    }
-
+    public List<Question> getQuestionByCategory(@PathVariable String category) { return questionService.getQuestionByCategory(category); }
 
     @GetMapping("/level/{level}")
     @ResponseBody
-    public List<Question> getQuestionByLevel(@PathVariable String level) {
-        return questionService.getQuestionByLevel(level);
-    }
+    public List<Question> getQuestionByLevel(@PathVariable String level) { return questionService.getQuestionByLevel(level); }
 
     @PostMapping("/add")
     @ResponseBody
-    public Question addQuestion(@RequestBody Question question) {
-        return questionService.addQuestion(question);
-    }
+    public Question addQuestion(@RequestBody Question question) { return questionService.addQuestion(question); }
     @GetMapping("/delete/{id}")
-    public void deleteQuestion(@PathVariable Integer id) {
-        questionService.deleteQuestion(id);
-    }
+    public void deleteQuestion(@PathVariable Integer id) { questionService.deleteQuestion(id); }
 }

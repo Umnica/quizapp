@@ -9,7 +9,7 @@ import java.util.Set;
 
 @Entity(name = "t_categories")
 @Data
-@JsonIgnoreProperties({"hibernateLazyInitializer", "handler", "questions"}) // Игнорируем ненужные поля
+@JsonIgnoreProperties({"hibernateLazyInitializer", "handler", "questions"})
 public class Category {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
