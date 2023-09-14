@@ -6,6 +6,7 @@ import lombok.extern.slf4j.Slf4j;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.RequestMapping;
+import org.springframework.web.bind.annotation.ResponseBody;
 import org.springframework.web.bind.annotation.RestController;
 
 import java.util.List;
@@ -16,9 +17,11 @@ import java.util.List;
 public class AnswerController {
     private final AnswerService answerService;
     @Autowired
+
     public AnswerController(AnswerService answerService) { this.answerService = answerService; }
 
 
     @GetMapping
+    @ResponseBody
     public List<Answer> getAllAnswer(){ return answerService.getAllAnswer(); }
 }

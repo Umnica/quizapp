@@ -12,6 +12,7 @@ public class QuestionService {
     // это объект для работы с бд DataAccessObject
     private final QuestionDao questionDao;
 
+
     @Autowired
     public QuestionService(QuestionDao questionDao) {
         this.questionDao = questionDao;
