@@ -29,5 +29,5 @@ public class Question {
 
     @OneToMany(mappedBy = "question") // Один вопрос имеет много ответов
     private List<Answer> answers = new ArrayList<>();
-
+    
 }

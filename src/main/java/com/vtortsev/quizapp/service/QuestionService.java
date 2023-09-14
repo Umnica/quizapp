@@ -23,7 +23,7 @@ public class QuestionService {
     }
 
     public List<Question> getQuestionByCategory(String category) {
-        return questionDao.findQuestionsByCategoryName(category);
+        return questionDao.findByCategoriesName(category);
     }
     public List<Question> getQuestionByLevel(String level) {
         return questionDao.findByLevel(level);

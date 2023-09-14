@@ -27,7 +27,7 @@ public class QuestionController {
 
 
 
-    @GetMapping("/category/{categoryName}")
+    @GetMapping("/category/{category}")
     @ResponseBody // Указываем, что результат должен быть сериализован в JSON
     public List<Question> getQuestionByCategory(@PathVariable String category){
         return questionService.getQuestionByCategory(category);
