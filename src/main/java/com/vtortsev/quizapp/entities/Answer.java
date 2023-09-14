@@ -6,13 +6,12 @@ import jakarta.persistence.GenerationType;
 import jakarta.persistence.Id;
 import lombok.Data;
 
-@Entity
+@Entity(name = "t_answers")
 @Data
-public class Questions {
+public class Answer {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Integer id;
-    private String category;
-    private String level;
-    private String questionText;
+    private String answerText;
+    private Integer questionId;
 }
