@@ -16,12 +16,12 @@ public class MapperConfig {
     }
 
     @Bean
-    public QuestionMapper QuestionMapper() {
+    public QuestionMapper questionMapper() {
         return Mappers.getMapper(QuestionMapper.class);
     }
 
     @Bean
-    public CategoryMapper CategoryMapper() {
+    public CategoryMapper categoryMapper() {
         return Mappers.getMapper(CategoryMapper.class);
     }
 
