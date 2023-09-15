@@ -11,7 +11,6 @@ import org.springframework.web.bind.annotation.RestController;
 import org.springframework.web.servlet.mvc.method.annotation.ResponseEntityExceptionHandler;
 
 @ControllerAdvice
-@RestController
 @Slf4j
 //содержит методы-обработчики для исключений
 public class GlobalExceptionHandler extends ResponseEntityExceptionHandler {
