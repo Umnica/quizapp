@@ -43,6 +43,7 @@ public class QuestionController {
                 .collect(Collectors.toList());*/
     }
 
+
     @GetMapping("/category/{category}")
     public List<QuestionDto> getQuestionByCategory(@PathVariable String category) {
         List<Question> questions = questionService.getQuestionByCategory(category);
