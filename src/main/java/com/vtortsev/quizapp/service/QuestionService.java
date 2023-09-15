@@ -36,4 +36,8 @@ public class QuestionService {
     public void deleteQuestion(Integer id) {
         questionDao.deleteById(id);
     }
+
+    public Question getQuestionById(Integer id) {
+        return questionDao.findById(id).orElse(null);
+    }
 }

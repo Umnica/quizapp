@@ -1,5 +1,6 @@
 package com.vtortsev.quizapp.controller;
 
+import com.vtortsev.quizapp.dto.FullQuestionDto;
 import com.vtortsev.quizapp.dto.QuestionDto;
 import com.vtortsev.quizapp.dto.mapper.QuestionMapper;
 import com.vtortsev.quizapp.entities.Question;
@@ -33,6 +34,11 @@ public class QuestionController {
                 .collect(Collectors.toList());
     }
 
+    @GetMapping("/{id}")
+    public FullQuestionDto getQuestionById(@PathVariable Integer id) {
+        return questionMapper.toFullDto(questionService.getQuestionById(id));
+    }
+
     @GetMapping("/category/{category}")
     public List<QuestionDto> getQuestionByCategory(@PathVariable String category) {
         List<Question> questions = questionService.getQuestionByCategory(category);
@@ -51,8 +57,7 @@ public class QuestionController {
 
     @PostMapping("/add")
     public QuestionDto addQuestion(@RequestBody Question question) {
-        Question question1 = questionService.addQuestion(question);
-        return questionMapper.toDto(question1);
+        return questionMapper.toDto(questionService.addQuestion(question));
     }
 
     @GetMapping("/delete/{id}")

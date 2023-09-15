@@ -23,3 +23,91 @@
 2023-09-16T01:10:15.808+04:00  INFO 13840 --- [SpringApplicationShutdownHook] j.LocalContainerEntityManagerFactoryBean : Closing JPA EntityManagerFactory for persistence unit 'default'
 2023-09-16T01:10:15.810+04:00  INFO 13840 --- [SpringApplicationShutdownHook] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Shutdown initiated...
 2023-09-16T01:10:15.814+04:00  INFO 13840 --- [SpringApplicationShutdownHook] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Shutdown completed.
+2023-09-16T02:35:46.930+04:00  INFO 3260 --- [main] c.vtortsev.quizapp.QuizappApplication    : Starting QuizappApplication using Java 20.0.2 with PID 3260 (C:\Users\Кирилл\Desktop\quizapp\target\classes started by Кирилл in C:\Users\Кирилл\Desktop\quizapp)
+2023-09-16T02:35:46.932+04:00  INFO 3260 --- [main] c.vtortsev.quizapp.QuizappApplication    : No active profile set, falling back to 1 default profile: "default"
+2023-09-16T02:35:47.500+04:00  INFO 3260 --- [main] .s.d.r.c.RepositoryConfigurationDelegate : Bootstrapping Spring Data JPA repositories in DEFAULT mode.
+2023-09-16T02:35:47.572+04:00  INFO 3260 --- [main] .s.d.r.c.RepositoryConfigurationDelegate : Finished Spring Data repository scanning in 63 ms. Found 3 JPA repository interfaces.
+2023-09-16T02:35:48.124+04:00  INFO 3260 --- [main] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat initialized with port(s): 9090 (http)
+2023-09-16T02:35:48.133+04:00  INFO 3260 --- [main] o.apache.catalina.core.StandardService   : Starting service [Tomcat]
+2023-09-16T02:35:48.133+04:00  INFO 3260 --- [main] o.apache.catalina.core.StandardEngine    : Starting Servlet engine: [Apache Tomcat/10.1.12]
+2023-09-16T02:35:48.209+04:00  INFO 3260 --- [main] o.a.c.c.C.[Tomcat].[localhost].[/]       : Initializing Spring embedded WebApplicationContext
+2023-09-16T02:35:48.210+04:00  INFO 3260 --- [main] w.s.c.ServletWebServerApplicationContext : Root WebApplicationContext: initialization completed in 1219 ms
+2023-09-16T02:35:48.368+04:00  INFO 3260 --- [main] o.hibernate.jpa.internal.util.LogHelper  : HHH000204: Processing PersistenceUnitInfo [name: default]
+2023-09-16T02:35:48.423+04:00  INFO 3260 --- [main] org.hibernate.Version                    : HHH000412: Hibernate ORM core version 6.2.7.Final
+2023-09-16T02:35:48.425+04:00  INFO 3260 --- [main] org.hibernate.cfg.Environment            : HHH000406: Using bytecode reflection optimizer
+2023-09-16T02:35:48.551+04:00  INFO 3260 --- [main] o.h.b.i.BytecodeProviderInitiator        : HHH000021: Bytecode provider name : bytebuddy
+2023-09-16T02:35:48.653+04:00  INFO 3260 --- [main] o.s.o.j.p.SpringPersistenceUnitInfo      : No LoadTimeWeaver setup: ignoring JPA class transformer
+2023-09-16T02:35:48.670+04:00  INFO 3260 --- [main] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Starting...
+2023-09-16T02:35:48.824+04:00  INFO 3260 --- [main] com.zaxxer.hikari.pool.HikariPool        : HikariPool-1 - Added connection org.postgresql.jdbc.PgConnection@6ce26986
+2023-09-16T02:35:48.826+04:00  INFO 3260 --- [main] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Start completed.
+2023-09-16T02:35:49.078+04:00  INFO 3260 --- [main] o.h.b.i.BytecodeProviderInitiator        : HHH000021: Bytecode provider name : bytebuddy
+2023-09-16T02:35:49.654+04:00  INFO 3260 --- [main] o.h.e.t.j.p.i.JtaPlatformInitiator       : HHH000490: Using JtaPlatform implementation: [org.hibernate.engine.transaction.jta.platform.internal.NoJtaPlatform]
+2023-09-16T02:35:49.721+04:00  INFO 3260 --- [main] j.LocalContainerEntityManagerFactoryBean : Initialized JPA EntityManagerFactory for persistence unit 'default'
+2023-09-16T02:35:50.343+04:00  INFO 3260 --- [main] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat started on port(s): 9090 (http) with context path ''
+2023-09-16T02:35:50.351+04:00  INFO 3260 --- [main] c.vtortsev.quizapp.QuizappApplication    : Started QuizappApplication in 3.837 seconds (process running for 4.788)
+2023-09-16T02:35:58.488+04:00  INFO 3260 --- [http-nio-9090-exec-2] o.a.c.c.C.[Tomcat].[localhost].[/]       : Initializing Spring DispatcherServlet 'dispatcherServlet'
+2023-09-16T02:35:58.488+04:00  INFO 3260 --- [http-nio-9090-exec-2] o.s.web.servlet.DispatcherServlet        : Initializing Servlet 'dispatcherServlet'
+2023-09-16T02:35:58.489+04:00  INFO 3260 --- [http-nio-9090-exec-2] o.s.web.servlet.DispatcherServlet        : Completed initialization in 1 ms
+2023-09-16T02:36:06.496+04:00 ERROR 3260 --- [http-nio-9090-exec-3] c.v.q.exception.GlobalExceptionHandler   : Error occurred for endpoint /questions/1: failed to lazily initialize a collection of role: com.vtortsev.quizapp.entities.Question.answers: could not initialize proxy - no Session
+2023-09-16T02:36:23.715+04:00  INFO 3260 --- [SpringApplicationShutdownHook] j.LocalContainerEntityManagerFactoryBean : Closing JPA EntityManagerFactory for persistence unit 'default'
+2023-09-16T02:36:23.716+04:00  INFO 3260 --- [SpringApplicationShutdownHook] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Shutdown initiated...
+2023-09-16T02:36:23.720+04:00  INFO 3260 --- [SpringApplicationShutdownHook] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Shutdown completed.
+2023-09-16T02:40:10.835+04:00  INFO 240 --- [main] c.vtortsev.quizapp.QuizappApplication    : Starting QuizappApplication using Java 20.0.2 with PID 240 (C:\Users\Кирилл\Desktop\quizapp\target\classes started by Кирилл in C:\Users\Кирилл\Desktop\quizapp)
+2023-09-16T02:40:10.838+04:00  INFO 240 --- [main] c.vtortsev.quizapp.QuizappApplication    : No active profile set, falling back to 1 default profile: "default"
+2023-09-16T02:40:11.466+04:00  INFO 240 --- [main] .s.d.r.c.RepositoryConfigurationDelegate : Bootstrapping Spring Data JPA repositories in DEFAULT mode.
+2023-09-16T02:40:11.531+04:00  INFO 240 --- [main] .s.d.r.c.RepositoryConfigurationDelegate : Finished Spring Data repository scanning in 56 ms. Found 3 JPA repository interfaces.
+2023-09-16T02:40:12.116+04:00  INFO 240 --- [main] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat initialized with port(s): 9090 (http)
+2023-09-16T02:40:12.124+04:00  INFO 240 --- [main] o.apache.catalina.core.StandardService   : Starting service [Tomcat]
+2023-09-16T02:40:12.124+04:00  INFO 240 --- [main] o.apache.catalina.core.StandardEngine    : Starting Servlet engine: [Apache Tomcat/10.1.12]
+2023-09-16T02:40:12.201+04:00  INFO 240 --- [main] o.a.c.c.C.[Tomcat].[localhost].[/]       : Initializing Spring embedded WebApplicationContext
+2023-09-16T02:40:12.202+04:00  INFO 240 --- [main] w.s.c.ServletWebServerApplicationContext : Root WebApplicationContext: initialization completed in 1301 ms
+2023-09-16T02:40:12.347+04:00  INFO 240 --- [main] o.hibernate.jpa.internal.util.LogHelper  : HHH000204: Processing PersistenceUnitInfo [name: default]
+2023-09-16T02:40:12.395+04:00  INFO 240 --- [main] org.hibernate.Version                    : HHH000412: Hibernate ORM core version 6.2.7.Final
+2023-09-16T02:40:12.396+04:00  INFO 240 --- [main] org.hibernate.cfg.Environment            : HHH000406: Using bytecode reflection optimizer
+2023-09-16T02:40:12.524+04:00  INFO 240 --- [main] o.h.b.i.BytecodeProviderInitiator        : HHH000021: Bytecode provider name : bytebuddy
+2023-09-16T02:40:12.631+04:00  INFO 240 --- [main] o.s.o.j.p.SpringPersistenceUnitInfo      : No LoadTimeWeaver setup: ignoring JPA class transformer
+2023-09-16T02:40:12.645+04:00  INFO 240 --- [main] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Starting...
+2023-09-16T02:40:12.974+04:00  INFO 240 --- [main] com.zaxxer.hikari.pool.HikariPool        : HikariPool-1 - Added connection org.postgresql.jdbc.PgConnection@34009349
+2023-09-16T02:40:12.976+04:00  INFO 240 --- [main] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Start completed.
+2023-09-16T02:40:13.203+04:00  INFO 240 --- [main] o.h.b.i.BytecodeProviderInitiator        : HHH000021: Bytecode provider name : bytebuddy
+2023-09-16T02:40:13.745+04:00  INFO 240 --- [main] o.h.e.t.j.p.i.JtaPlatformInitiator       : HHH000490: Using JtaPlatform implementation: [org.hibernate.engine.transaction.jta.platform.internal.NoJtaPlatform]
+2023-09-16T02:40:13.815+04:00  INFO 240 --- [main] j.LocalContainerEntityManagerFactoryBean : Initialized JPA EntityManagerFactory for persistence unit 'default'
+2023-09-16T02:40:14.447+04:00  INFO 240 --- [main] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat started on port(s): 9090 (http) with context path ''
+2023-09-16T02:40:14.454+04:00  INFO 240 --- [main] c.vtortsev.quizapp.QuizappApplication    : Started QuizappApplication in 4.127 seconds (process running for 4.478)
+2023-09-16T02:40:17.609+04:00  INFO 240 --- [http-nio-9090-exec-2] o.a.c.c.C.[Tomcat].[localhost].[/]       : Initializing Spring DispatcherServlet 'dispatcherServlet'
+2023-09-16T02:40:17.609+04:00  INFO 240 --- [http-nio-9090-exec-2] o.s.web.servlet.DispatcherServlet        : Initializing Servlet 'dispatcherServlet'
+2023-09-16T02:40:17.610+04:00  INFO 240 --- [http-nio-9090-exec-2] o.s.web.servlet.DispatcherServlet        : Completed initialization in 1 ms
+2023-09-16T02:40:17.728+04:00 ERROR 240 --- [http-nio-9090-exec-2] c.v.q.exception.GlobalExceptionHandler   : Error occurred for endpoint /questions/1: failed to lazily initialize a collection of role: com.vtortsev.quizapp.entities.Question.answers: could not initialize proxy - no Session
+2023-09-16T02:41:12.195+04:00  INFO 240 --- [SpringApplicationShutdownHook] j.LocalContainerEntityManagerFactoryBean : Closing JPA EntityManagerFactory for persistence unit 'default'
+2023-09-16T02:41:12.197+04:00  INFO 240 --- [SpringApplicationShutdownHook] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Shutdown initiated...
+2023-09-16T02:41:12.202+04:00  INFO 240 --- [SpringApplicationShutdownHook] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Shutdown completed.
+2023-09-16T02:42:38.329+04:00  INFO 15068 --- [main] c.vtortsev.quizapp.QuizappApplication    : Starting QuizappApplication using Java 20.0.2 with PID 15068 (C:\Users\Кирилл\Desktop\quizapp\target\classes started by Кирилл in C:\Users\Кирилл\Desktop\quizapp)
+2023-09-16T02:42:38.332+04:00  INFO 15068 --- [main] c.vtortsev.quizapp.QuizappApplication    : No active profile set, falling back to 1 default profile: "default"
+2023-09-16T02:42:39.007+04:00  INFO 15068 --- [main] .s.d.r.c.RepositoryConfigurationDelegate : Bootstrapping Spring Data JPA repositories in DEFAULT mode.
+2023-09-16T02:42:39.066+04:00  INFO 15068 --- [main] .s.d.r.c.RepositoryConfigurationDelegate : Finished Spring Data repository scanning in 52 ms. Found 3 JPA repository interfaces.
+2023-09-16T02:42:39.612+04:00  INFO 15068 --- [main] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat initialized with port(s): 9090 (http)
+2023-09-16T02:42:39.621+04:00  INFO 15068 --- [main] o.apache.catalina.core.StandardService   : Starting service [Tomcat]
+2023-09-16T02:42:39.622+04:00  INFO 15068 --- [main] o.apache.catalina.core.StandardEngine    : Starting Servlet engine: [Apache Tomcat/10.1.12]
+2023-09-16T02:42:39.709+04:00  INFO 15068 --- [main] o.a.c.c.C.[Tomcat].[localhost].[/]       : Initializing Spring embedded WebApplicationContext
+2023-09-16T02:42:39.709+04:00  INFO 15068 --- [main] w.s.c.ServletWebServerApplicationContext : Root WebApplicationContext: initialization completed in 1314 ms
+2023-09-16T02:42:39.852+04:00  INFO 15068 --- [main] o.hibernate.jpa.internal.util.LogHelper  : HHH000204: Processing PersistenceUnitInfo [name: default]
+2023-09-16T02:42:39.899+04:00  INFO 15068 --- [main] org.hibernate.Version                    : HHH000412: Hibernate ORM core version 6.2.7.Final
+2023-09-16T02:42:39.902+04:00  INFO 15068 --- [main] org.hibernate.cfg.Environment            : HHH000406: Using bytecode reflection optimizer
+2023-09-16T02:42:40.017+04:00  INFO 15068 --- [main] o.h.b.i.BytecodeProviderInitiator        : HHH000021: Bytecode provider name : bytebuddy
+2023-09-16T02:42:40.123+04:00  INFO 15068 --- [main] o.s.o.j.p.SpringPersistenceUnitInfo      : No LoadTimeWeaver setup: ignoring JPA class transformer
+2023-09-16T02:42:40.137+04:00  INFO 15068 --- [main] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Starting...
+2023-09-16T02:42:40.291+04:00  INFO 15068 --- [main] com.zaxxer.hikari.pool.HikariPool        : HikariPool-1 - Added connection org.postgresql.jdbc.PgConnection@342beaf6
+2023-09-16T02:42:40.293+04:00  INFO 15068 --- [main] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Start completed.
+2023-09-16T02:42:40.554+04:00  INFO 15068 --- [main] o.h.b.i.BytecodeProviderInitiator        : HHH000021: Bytecode provider name : bytebuddy
+2023-09-16T02:42:41.155+04:00  INFO 15068 --- [main] o.h.e.t.j.p.i.JtaPlatformInitiator       : HHH000490: Using JtaPlatform implementation: [org.hibernate.engine.transaction.jta.platform.internal.NoJtaPlatform]
+2023-09-16T02:42:41.232+04:00  INFO 15068 --- [main] j.LocalContainerEntityManagerFactoryBean : Initialized JPA EntityManagerFactory for persistence unit 'default'
+2023-09-16T02:42:41.882+04:00  INFO 15068 --- [main] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat started on port(s): 9090 (http) with context path ''
+2023-09-16T02:42:41.889+04:00  INFO 15068 --- [main] c.vtortsev.quizapp.QuizappApplication    : Started QuizappApplication in 4.002 seconds (process running for 4.341)
+2023-09-16T02:42:48.037+04:00  INFO 15068 --- [http-nio-9090-exec-2] o.a.c.c.C.[Tomcat].[localhost].[/]       : Initializing Spring DispatcherServlet 'dispatcherServlet'
+2023-09-16T02:42:48.037+04:00  INFO 15068 --- [http-nio-9090-exec-2] o.s.web.servlet.DispatcherServlet        : Initializing Servlet 'dispatcherServlet'
+2023-09-16T02:42:48.038+04:00  INFO 15068 --- [http-nio-9090-exec-2] o.s.web.servlet.DispatcherServlet        : Completed initialization in 1 ms
+2023-09-16T02:42:48.142+04:00 ERROR 15068 --- [http-nio-9090-exec-2] c.v.q.exception.GlobalExceptionHandler   : Error occurred for endpoint /questions/1: failed to lazily initialize a collection of role: com.vtortsev.quizapp.entities.Question.answers: could not initialize proxy - no Session
+2023-09-16T02:42:50.941+04:00 ERROR 15068 --- [http-nio-9090-exec-4] c.v.q.exception.GlobalExceptionHandler   : Error occurred for endpoint /questions/1: failed to lazily initialize a collection of role: com.vtortsev.quizapp.entities.Question.answers: could not initialize proxy - no Session
+2023-09-16T02:42:52.961+04:00 ERROR 15068 --- [http-nio-9090-exec-6] c.v.q.exception.GlobalExceptionHandler   : Error occurred for endpoint /questions/2: failed to lazily initialize a collection of role: com.vtortsev.quizapp.entities.Question.answers: could not initialize proxy - no Session
+2023-09-16T02:42:55.195+04:00 ERROR 15068 --- [http-nio-9090-exec-8] c.v.q.exception.GlobalExceptionHandler   : Error occurred for endpoint /questions/3: failed to lazily initialize a collection of role: com.vtortsev.quizapp.entities.Question.answers: could not initialize proxy - no Session
+2023-09-16T02:43:24.488+04:00 ERROR 15068 --- [http-nio-9090-exec-2] c.v.q.exception.GlobalExceptionHandler   : Error occurred for endpoint /questions/1: failed to lazily initialize a collection of role: com.vtortsev.quizapp.entities.Question.answers: could not initialize proxy - no Session

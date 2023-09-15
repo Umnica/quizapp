@@ -26,7 +26,7 @@ public class Question {
     )
     private Set<Category> categories = new HashSet<>();
 
-    @OneToMany(mappedBy = "question") // Один вопрос имеет много ответов
+    @OneToMany(mappedBy = "question", fetch = FetchType.EAGER) // Один вопрос имеет много ответов
     private List<Answer> answers = new ArrayList<>();
 
 }
