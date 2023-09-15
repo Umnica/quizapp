@@ -4,18 +4,17 @@ import com.fasterxml.jackson.annotation.JsonIgnoreProperties;
 import jakarta.persistence.*;
 import lombok.Data;
 
-@Entity(name = "t_answers")
+import java.util.HashSet;
+import java.util.Set;
+
+@Entity(name = "t_categories")
 @Data
-public class Answer {
+public class Category {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Integer id;
-    private String answerText;
+    String name;
 
-
-    @ManyToOne//(fetch = FetchType.LAZY)
-    @JoinColumn(name = "question_id")
-    private Question question;
-
-
+    @ManyToMany(mappedBy = "categories")
+    private Set<Question> questions = new HashSet<>();
 }
