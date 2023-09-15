@@ -37,7 +37,7 @@ public class AnswerController {
     public List<AnswerDto> getAllAnswer() {
         List<Answer> answers = answerService.getAllAnswer();
         return answers.stream()
-                .map(answerMapper::toDto).
-                collect(Collectors.toList());
+                .map(answerMapper::toDto)
+                .collect(Collectors.toList());
     }
 }

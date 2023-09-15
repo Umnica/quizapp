@@ -1,5 +1,7 @@
 package com.vtortsev.quizapp.controller;
 
+import com.vtortsev.quizapp.dto.QuestionDto;
+import com.vtortsev.quizapp.dto.mapper.QuestionMapper;
 import com.vtortsev.quizapp.entities.Question;
 import com.vtortsev.quizapp.service.QuestionService;
 import lombok.extern.slf4j.Slf4j;
@@ -7,37 +9,50 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.*;
 
 import java.util.List;
+import java.util.stream.Collectors;
 
-@Slf4j
 @RestController // главный контролер, по запросам пользователя выводит файл ему
 @RequestMapping("/questions") //у всех заросах в этом блоке контролера будет впереди /questions
 public class QuestionController {
     // spring сам создаст бин и поместит его в переменную
     private final QuestionService questionService;
 
+    private final QuestionMapper questionMapper;
+
     @Autowired
-    public QuestionController(QuestionService questionService) {
+    public QuestionController(QuestionService questionService, QuestionMapper questionMapper) {
         this.questionService = questionService;
+        this.questionMapper = questionMapper;
     }
 
     @GetMapping
-    public List<Question> getAllQuestions() {
-        return questionService.getAllQuestions();
+    public List<QuestionDto> getAllQuestions() {
+        List<Question> questions = questionService.getAllQuestions();
+        return questions.stream()
+                .map(questionMapper::toDto)
+                .collect(Collectors.toList());
     }
 
     @GetMapping("/category/{category}")
-    public List<Question> getQuestionByCategory(@PathVariable String category) {
-        return questionService.getQuestionByCategory(category);
+    public List<QuestionDto> getQuestionByCategory(@PathVariable String category) {
+        List<Question> questions = questionService.getQuestionByCategory(category);
+        return questions.stream()
+                .map(questionMapper::toDto)
+                .collect(Collectors.toList());
     }
 
     @GetMapping("/level/{level}")
-    public List<Question> getQuestionByLevel(@PathVariable String level) {
-        return questionService.getQuestionByLevel(level);
+    public List<QuestionDto> getQuestionByLevel(@PathVariable String level) {
+        List<Question> questions = questionService.getQuestionByLevel(level);
+        return questions.stream()
+                .map(questionMapper::toDto)
+                .collect(Collectors.toList());
     }
 
     @PostMapping("/add")
-    public Question addQuestion(@RequestBody Question question) {
-        return questionService.addQuestion(question);
+    public QuestionDto addQuestion(@RequestBody Question question) {
+        Question question1 = questionService.addQuestion(question);
+        return questionMapper.toDto(question1);
     }
 
     @GetMapping("/delete/{id}")
