@@ -1,4 +1,4 @@
-package com.vtortsev.quizapp.dto;
+package com.vtortsev.quizapp.dto.createEntityDto;
 
 import lombok.Data;
 
