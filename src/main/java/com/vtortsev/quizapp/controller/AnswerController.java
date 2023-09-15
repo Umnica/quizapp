@@ -27,11 +27,6 @@ public class AnswerController {
         this.answerMapper = answerMapper;
     }
 
-
-    //@GetMapping
-    //@ResponseBody
-    //public List<Answer> getAllAnswer(){ return answerService.getAllAnswer(); }
-
     @GetMapping
     @ResponseBody
     public List<AnswerDto> getAllAnswer() {
