@@ -9,7 +9,7 @@ import lombok.Data;
 
 @Entity(name = "t_answers")
 @Data
-@JsonIgnoreProperties({"hibernateLazyInitializer", "handler"}) // Игнорируем ненужные поля
+//@JsonIgnoreProperties({"hibernateLazyInitializer", "handler"}) // Игнорируем ненужные поля
 public class Answer {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
