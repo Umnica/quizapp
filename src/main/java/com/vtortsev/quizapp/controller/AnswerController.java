@@ -20,6 +20,7 @@ import java.util.stream.Collectors;
 public class AnswerController {
     private final AnswerService answerService;
     private final AnswerMapper answerMapper;
+
     @Autowired
     public AnswerController(AnswerService answerService, AnswerMapper answerMapper) {
         this.answerService = answerService;
