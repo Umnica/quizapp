@@ -1,6 +1,7 @@
 package com.vtortsev.quizapp.service;
 
 import com.vtortsev.quizapp.dao.QuestionDao;
+import com.vtortsev.quizapp.dto.CreateQuestionDto;
 import com.vtortsev.quizapp.entities.Question;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
@@ -29,11 +30,18 @@ public class QuestionService {
         return questionDao.findByLevel(level);
     }
 
-    public Question addQuestion(Question question) {
+    /*public Question addQuestion(Question question) {
         return questionDao.save(question);
-    }
+    }*/
 
     public void deleteQuestion(Integer id) {
         questionDao.deleteById(id);
+    }
+
+    public Question createQuestion(CreateQuestionDto createQuestionDto) {
+        Question question = new Question();
+        question.setQuestionText(createQuestionDto.getQuestionText());
+        question.setLevel(createQuestionDto.getLevel());
+        return questionDao.save(question);
     }
 }

@@ -1,11 +1,15 @@
 package com.vtortsev.quizapp.controller;
 
+import com.vtortsev.quizapp.dto.CategoryDto;
+import com.vtortsev.quizapp.dto.CreateCategoryDto;
+import com.vtortsev.quizapp.dto.CreateQuestionDto;
 import com.vtortsev.quizapp.dto.QuestionDto;
 import com.vtortsev.quizapp.dto.mapper.QuestionMapper;
 import com.vtortsev.quizapp.entities.Question;
 import com.vtortsev.quizapp.service.QuestionService;
 import lombok.extern.slf4j.Slf4j;
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.http.HttpStatus;
 import org.springframework.web.bind.annotation.*;
 
 import java.util.List;
@@ -18,6 +22,7 @@ public class QuestionController {
     private final QuestionService questionService;
 
     private final QuestionMapper questionMapper;
+
 
     @Autowired
     public QuestionController(QuestionService questionService, QuestionMapper questionMapper) {
@@ -49,11 +54,19 @@ public class QuestionController {
                 .collect(Collectors.toList());
     }
 
-    @PostMapping("/add")
+   /* @PostMapping("/add")
     public QuestionDto addQuestion(@RequestBody Question question) {
         Question question1 = questionService.addQuestion(question);
         return questionMapper.toDto(question1);
+    }*/
+
+    @PostMapping
+    @ResponseStatus(HttpStatus.CREATED)
+    public QuestionDto createQuestion(@RequestBody CreateQuestionDto createQuestionDto) {
+        return questionMapper.toDto(questionService.createQuestion(createQuestionDto));
     }
+
+
 
     @GetMapping("/delete/{id}")
     public void deleteQuestion(@PathVariable Integer id) {
