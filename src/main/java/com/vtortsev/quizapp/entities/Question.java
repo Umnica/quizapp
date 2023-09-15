@@ -18,7 +18,7 @@ public class Question {
     private String level;
     private String questionText;
 
-    @ManyToMany
+    @ManyToMany(fetch = FetchType.EAGER)
     @JoinTable(
             name = "t_question_category",
             joinColumns = @JoinColumn(name = "question_id"),
