@@ -11,16 +11,22 @@ import org.springframework.web.bind.annotation.RestController;
 
 import java.util.List;
 
-
+@Slf4j
 @RestController
 @RequestMapping("/answers")
 public class AnswerController {
     private final AnswerService answerService;
+
     @Autowired
-    public AnswerController(AnswerService answerService) { this.answerService = answerService; }
+
+    public AnswerController(AnswerService answerService) {
+        this.answerService = answerService;
+    }
 
 
     @GetMapping
     @ResponseBody
-    public List<Answer> getAllAnswer() { return answerService.getAllAnswer(); }
+    public List<Answer> getAllAnswer() {
+        return answerService.getAllAnswer();
+    }
 }

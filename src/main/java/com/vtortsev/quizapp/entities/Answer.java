@@ -6,7 +6,6 @@ import lombok.Data;
 
 @Entity(name = "t_answers")
 @Data
-@JsonIgnoreProperties({"hibernateLazyInitializer", "handler", "question"})
 public class Answer {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)

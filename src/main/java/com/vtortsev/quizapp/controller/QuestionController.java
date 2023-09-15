@@ -8,14 +8,15 @@ import org.springframework.web.bind.annotation.*;
 
 import java.util.List;
 
-
+@Slf4j
 @RestController // главный контролер, по запросам пользователя выводит файл ему
 @RequestMapping("/questions") //у всех заросах в этом блоке контролера будет впереди /questions
 public class QuestionController {
     // spring сам создаст бин и поместит его в переменную
     private final QuestionService questionService;
+
     @Autowired
-    public QuestionController(QuestionService questionService){
+    public QuestionController(QuestionService questionService) {
         this.questionService = questionService;
     }
 
@@ -25,19 +26,26 @@ public class QuestionController {
         return questionService.getAllQuestions();
     }
 
-
-
     @GetMapping("/category/{category}")
     @ResponseBody // Указываем, что результат должен быть сериализован в JSON
-    public List<Question> getQuestionByCategory(@PathVariable String category) { return questionService.getQuestionByCategory(category); }
+    public List<Question> getQuestionByCategory(@PathVariable String category) {
+        return questionService.getQuestionByCategory(category);
+    }
 
     @GetMapping("/level/{level}")
     @ResponseBody
-    public List<Question> getQuestionByLevel(@PathVariable String level) { return questionService.getQuestionByLevel(level); }
+    public List<Question> getQuestionByLevel(@PathVariable String level) {
+        return questionService.getQuestionByLevel(level);
+    }
 
     @PostMapping("/add")
     @ResponseBody
-    public Question addQuestion(@RequestBody Question question) { return questionService.addQuestion(question); }
+    public Question addQuestion(@RequestBody Question question) {
+        return questionService.addQuestion(question);
+    }
+
     @GetMapping("/delete/{id}")
-    public void deleteQuestion(@PathVariable Integer id) { questionService.deleteQuestion(id); }
+    public void deleteQuestion(@PathVariable Integer id) {
+        questionService.deleteQuestion(id);
+    }
 }

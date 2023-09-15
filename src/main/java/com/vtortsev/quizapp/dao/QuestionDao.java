@@ -11,5 +11,6 @@ import java.util.List;
 @Repository // интерфейс репозитория расширяет интерфейс JpaRepository<Question, Integer>
 public interface QuestionDao extends JpaRepository<Question, Integer> {
     List<Question> findByCategoriesName(String categoryName);
+
     List<Question> findByLevel(String level);
 }

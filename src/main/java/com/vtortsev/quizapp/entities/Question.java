@@ -11,7 +11,6 @@ import java.util.Set;
 
 @Entity(name = "t_questions")
 @Data
-@JsonIgnoreProperties({"hibernateLazyInitializer", "handler", "categories", "answers"}) // Игнорируем ненужные поля
 public class Question {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
@@ -29,5 +28,5 @@ public class Question {
 
     @OneToMany(mappedBy = "question") // Один вопрос имеет много ответов
     private List<Answer> answers = new ArrayList<>();
-    
+
 }

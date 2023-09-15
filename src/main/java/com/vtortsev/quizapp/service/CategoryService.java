@@ -10,9 +10,14 @@ import java.util.List;
 @Service
 public class CategoryService {
     private final CategoryDao categoryDao;
+
     @Autowired
-    public CategoryService(CategoryDao categoryDao) { this.categoryDao = categoryDao; }
+    public CategoryService(CategoryDao categoryDao) {
+        this.categoryDao = categoryDao;
+    }
 
 
-    public List<Category> getAllCategory() { return categoryDao.findAll(); }
+    public List<Category> getAllCategory() {
+        return categoryDao.findAll();
+    }
 }
