@@ -8,6 +8,7 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
 import java.util.List;
+import java.util.stream.Collectors;
 
 @Service
 public class AnswerService {
@@ -37,4 +38,7 @@ public class AnswerService {
     }
 
 
+    public List<Answer> getAnswersByIds(List<Integer> answerIds) {
+        return answerIds.stream().map(this::getAnswerById).collect(Collectors.toList());
+    }
 }

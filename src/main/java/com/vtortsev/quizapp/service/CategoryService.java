@@ -7,6 +7,7 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
 import java.util.List;
+import java.util.stream.Collectors;
 
 @Service
 public class CategoryService {
@@ -33,5 +34,9 @@ public class CategoryService {
         Category category = new Category();
         category.setName(createCategoryDto.getName());
         return categoryDao.save(category);
+    }
+
+    public List<Category> getCategoriesByIds(List<Integer> categoryIds) {
+        return categoryIds.stream().map(this::getCategoryById).collect(Collectors.toList());
     }
 }

@@ -6,6 +6,8 @@ import com.vtortsev.quizapp.dao.QuestionDao;
 import com.vtortsev.quizapp.dto.createEntityDto.CreateFullQuestionDto;
 import com.vtortsev.quizapp.dto.createEntityDto.CreateQuestionDto;
 import com.vtortsev.quizapp.dto.createEntityDto.CreateQuestionDtoWithUseIdsAnswerAndCategory;
+import com.vtortsev.quizapp.dto.entityIdDto.AnswerIdDto;
+import com.vtortsev.quizapp.dto.entityIdDto.CategoryIdDto;
 import com.vtortsev.quizapp.entities.Answer;
 import com.vtortsev.quizapp.entities.Category;
 import com.vtortsev.quizapp.entities.Question;
@@ -19,6 +21,7 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 import org.springframework.transaction.annotation.Transactional;
 
+import java.util.HashSet;
 import java.util.List;
 import java.util.Set;
 import java.util.stream.Collectors;
@@ -228,20 +231,26 @@ public class QuestionService {
         question.setLevel(dto.getLevel());
 
         // Получаем ответы по их id
-        List<Answer> answers = dto.getAnswers().stream()
-                .map(answerIdDto -> answerService.getAnswerById(answerIdDto.getId()))
+        List<Integer> answerIds = dto.getAnswers().stream()
+                .map(AnswerIdDto::getId)
                 .collect(Collectors.toList());
 
-        // Получаем категории по их id
-        Set<Category> categories = dto.getCategories().stream()
-                .map(categoryIdDto -> categoryService.getCategoryById(categoryIdDto.getId()))
-                .collect(Collectors.toSet());
+        List<Answer> answers = answerService.getAnswersByIds(answerIds);
+        if (answers.size() != answerIds.size()) {
+            throw new IllegalArgumentException("Invalid answer id(s) provided");
+        }
 
+        // Получаем категории по их id
+        List<Integer> categoryIds = dto.getCategories().stream()
+                .map(CategoryIdDto::getId)
+                .collect(Collectors.toList());
+
+        List<Category> categories = categoryService.getCategoriesByIds(categoryIds);
         question.setAnswers(answers);
-        question.setCategories(categories);
+        question.setCategories(new HashSet<>(categories));
 
         // Проверка на минимальное количество ответов для категории "История"
-        if (categories.stream().anyMatch(category -> category.getName().equals("История")) &&
+        if (categories.stream().anyMatch(category -> category != null && category.getName().equals("История")) &&
                 answers.size() < 2) {
             throw new IllegalArgumentException("Вопросы по категории История должны обязательно содержать минимум 2 ответа");
         }

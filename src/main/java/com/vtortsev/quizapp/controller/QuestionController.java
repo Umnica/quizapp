@@ -79,7 +79,7 @@ public class QuestionController {
     //public FullQuestionDto createFullQuestion(@RequestBody CreateFullQuestionDto createFullQuestionDto) {
     //    return questionMapper.toFullDto(questionService.createQuestion(createFullQuestionDto));
     //}
-    public FullQuestionDto createQuestionDtoWithUseIdsAnswerAndCategory (@RequestBody CreateQuestionDtoWithUseIdsAnswerAndCategory dto) {
+    public FullQuestionDto createQuestionDtoWithUseIdsAnswerAndCategory(@RequestBody CreateQuestionDtoWithUseIdsAnswerAndCategory dto) {
         return questionMapper.toFullDto(questionService.createQuestionDtoWithUseIdsAnswerAndCategory(dto));
     }
 
