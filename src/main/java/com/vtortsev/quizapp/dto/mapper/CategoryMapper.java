@@ -10,9 +10,4 @@ public interface CategoryMapper {
     @Mapping(source = "id", target = "id")
     @Mapping(source = "name", target = "name")
     CategoryDto toDto(Category category);
-
-    @Mapping(source = "id", target = "id")
-    @Mapping(source = "name", target = "name")
-    Category toEntity(CategoryDto categoryDto);
-
 }

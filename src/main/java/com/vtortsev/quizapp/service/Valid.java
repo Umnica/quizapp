@@ -8,6 +8,4 @@ public class Valid {
     public static boolean isValidCategoryName(String name) {
         return name.length() > 1 && isValidText(name);
     }
-
-
 }

@@ -17,22 +17,7 @@ public interface QuestionMapper {
     @Mapping(source = "id", target = "id")
     @Mapping(source = "level", target = "level")
     @Mapping(source = "questionText", target = "questionText")
-    Question toEntity(QuestionDto questionDto);
-
-    @Mapping(source = "id", target = "id")
-    @Mapping(source = "level", target = "level")
-    @Mapping(source = "questionText", target = "questionText")
     @Mapping(source = "answers", target = "answers")
     @Mapping(source = "categories", target = "categories")
     FullQuestionDto toFullDto(Question question);
-
-
-    @Mapping(source = "id", target = "id")
-    @Mapping(source = "level", target = "level")
-    @Mapping(source = "questionText", target = "questionText")
-    @Mapping(source = "answers", target = "answers")
-    @Mapping(source = "categories", target = "categories")
-    Question toFullEntity(CreateFullQuestionDto createFullQuestionDto);
-
-
 }

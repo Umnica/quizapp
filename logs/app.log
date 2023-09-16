@@ -56,3 +56,6 @@
 2023-09-17T00:12:28.006+04:00 ERROR 9000 --- [http-nio-9090-exec-6] c.v.q.exception.GlobalExceptionHandler   : Error occurred for endpoint /questions: В базе данных не существует категории с id: 10
 2023-09-17T00:12:46.311+04:00 ERROR 9000 --- [http-nio-9090-exec-8] c.v.q.exception.GlobalExceptionHandler   : Error occurred for endpoint /questions: Вопросы по категории История должны обязательно содержать минимум 2 ответа
 2023-09-17T00:13:00.455+04:00 ERROR 9000 --- [http-nio-9090-exec-10] c.v.q.exception.GlobalExceptionHandler   : Error occurred for endpoint /questions: В базе данных не существует ответа с id: 4564
+2023-09-17T00:21:04.375+04:00  INFO 9000 --- [SpringApplicationShutdownHook] j.LocalContainerEntityManagerFactoryBean : Closing JPA EntityManagerFactory for persistence unit 'default'
+2023-09-17T00:21:04.376+04:00  INFO 9000 --- [SpringApplicationShutdownHook] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Shutdown initiated...
+2023-09-17T00:21:04.380+04:00  INFO 9000 --- [SpringApplicationShutdownHook] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Shutdown completed.

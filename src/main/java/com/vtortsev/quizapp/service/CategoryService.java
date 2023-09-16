@@ -22,7 +22,6 @@ public class CategoryService {
         return categoryDao.findById(id).orElse(null);
     }
 
-
     public List<Category> getAllCategory() {
         return categoryDao.findAll();
     }

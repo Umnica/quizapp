@@ -73,12 +73,6 @@ public class QuestionController {
 
     @PostMapping
     @ResponseStatus(HttpStatus.CREATED)
-    /*public QuestionDto createQuestion(@RequestBody CreateQuestionDto createQuestionDto) {
-        return questionMapper.toDto(questionService.createQuestion(createQuestionDto));
-    }*/
-    //public FullQuestionDto createFullQuestion(@RequestBody CreateFullQuestionDto createFullQuestionDto) {
-    //    return questionMapper.toFullDto(questionService.createQuestion(createFullQuestionDto));
-    //}
     public FullQuestionDto createQuestionDtoWithUseIdsAnswerAndCategory(@RequestBody CreateQuestionDtoWithUseIdsAnswerAndCategory dto) {
         return questionMapper.toFullDto(questionService.createQuestionDtoWithUseIdsAnswerAndCategory(dto));
     }

@@ -10,8 +10,4 @@ public interface AnswerMapper {
     @Mapping(source = "id", target = "id")
     @Mapping(source = "answerText", target = "answerText")
     AnswerDto toDto(Answer answer);
-
-    @Mapping(source = "id", target = "id")
-    @Mapping(source = "answerText", target = "answerText")
-    Answer toEntity(AnswerDto answerDto);
 }
