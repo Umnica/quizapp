@@ -3,7 +3,7 @@ package com.vtortsev.quizapp.controller;
 import com.vtortsev.quizapp.dto.FullQuestionDto;
 import com.vtortsev.quizapp.dto.QuestionDto;
 import com.vtortsev.quizapp.dto.createEntityDto.CreateFullQuestionDto;
-import com.vtortsev.quizapp.dto.createEntityDto.CreateQuestionDto;
+import com.vtortsev.quizapp.dto.createEntityDto.CreateQuestionDtoWithUseIdsAnswerAndCategory;
 import com.vtortsev.quizapp.dto.mapper.QuestionMapper;
 import com.vtortsev.quizapp.entities.Question;
 import com.vtortsev.quizapp.service.QuestionService;
@@ -76,8 +76,11 @@ public class QuestionController {
     /*public QuestionDto createQuestion(@RequestBody CreateQuestionDto createQuestionDto) {
         return questionMapper.toDto(questionService.createQuestion(createQuestionDto));
     }*/
-    public FullQuestionDto createFullQuestion(@RequestBody CreateFullQuestionDto createFullQuestionDto) {
-        return questionMapper.toFullDto(questionService.createQuestion(createFullQuestionDto));
+    //public FullQuestionDto createFullQuestion(@RequestBody CreateFullQuestionDto createFullQuestionDto) {
+    //    return questionMapper.toFullDto(questionService.createQuestion(createFullQuestionDto));
+    //}
+    public FullQuestionDto createQuestionDtoWithUseIdsAnswerAndCategory (@RequestBody CreateQuestionDtoWithUseIdsAnswerAndCategory dto) {
+        return questionMapper.toFullDto(questionService.createQuestionDtoWithUseIdsAnswerAndCategory(dto));
     }
 
 

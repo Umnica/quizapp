@@ -18,6 +18,10 @@ public class AnswerService {
         this.answerDao = answerDao;
     }
 
+    public Answer getAnswerById(Integer id) {
+        return answerDao.findById(id).orElse(null);
+    }
+
 
     public List<Answer> getAllAnswer() {
         return answerDao.findAll();

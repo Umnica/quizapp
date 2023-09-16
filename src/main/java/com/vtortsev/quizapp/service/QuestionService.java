@@ -1,8 +1,11 @@
 package com.vtortsev.quizapp.service;
 
+import com.vtortsev.quizapp.dao.AnswerDao;
+import com.vtortsev.quizapp.dao.CategoryDao;
 import com.vtortsev.quizapp.dao.QuestionDao;
 import com.vtortsev.quizapp.dto.createEntityDto.CreateFullQuestionDto;
 import com.vtortsev.quizapp.dto.createEntityDto.CreateQuestionDto;
+import com.vtortsev.quizapp.dto.createEntityDto.CreateQuestionDtoWithUseIdsAnswerAndCategory;
 import com.vtortsev.quizapp.entities.Answer;
 import com.vtortsev.quizapp.entities.Category;
 import com.vtortsev.quizapp.entities.Question;
@@ -23,12 +26,17 @@ import java.util.stream.Collectors;
 @Service // сервис какая то логика внутри
 public class QuestionService {
     private final QuestionDao questionDao; // это объект для работы с бд DataAccessObject
+    private final CategoryService categoryService;
+    private final AnswerService answerService;
+
     @PersistenceContext
     private EntityManager entityManager;
 
     @Autowired
-    public QuestionService(QuestionDao questionDao) {
+    public QuestionService(QuestionDao questionDao, CategoryService categoryService, AnswerService answerService) {
         this.questionDao = questionDao;
+        this.categoryService = categoryService;
+        this.answerService = answerService;
     }
 
 
@@ -65,6 +73,8 @@ public class QuestionService {
         question.setLevel(createQuestionDto.getLevel());
         return questionDao.save(question);
     }
+
+    /*
     @Transactional
     public Question createQuestion(CreateFullQuestionDto createFullQuestionDto) {
         if (!Valid.isValidText(createFullQuestionDto.getLevel()))
@@ -129,6 +139,8 @@ public class QuestionService {
         return question;
     }
 
+
+     */
     public Question getQuestionById(Integer id) {
         return questionDao.findById(id).orElse(null);
     }
@@ -143,6 +155,98 @@ public class QuestionService {
 
         List<Category> result = typedQuery.getResultList();
         return result.isEmpty() ? null : result.get(0);
+    }
+
+    @Transactional
+    public Question createQuestion(CreateFullQuestionDto createFullQuestionDto) {
+        // Проверки на валидность текстов
+        if (!Valid.isValidText(createFullQuestionDto.getLevel()))
+            throw new IllegalArgumentException("Invalid question level");
+        if (!Valid.isValidText(createFullQuestionDto.getQuestionText()))
+            throw new IllegalArgumentException("Invalid question questionText");
+
+        Question question = new Question();
+        question.setQuestionText(createFullQuestionDto.getQuestionText());
+        question.setLevel(createFullQuestionDto.getLevel());
+
+        // Проверка и привязка существующих ответов по id
+        List<Answer> answers = createFullQuestionDto.getAnswers()
+                .stream()
+                .map(answerDto -> {
+                    if (!Valid.isValidText(answerDto.getAnswerText()))
+                        throw new IllegalArgumentException("Invalid answer answerText");
+
+                    Answer existingAnswer = entityManager.find(Answer.class, answerDto.getId());
+                    if (existingAnswer == null) {
+                        throw new IllegalArgumentException("Answer with id " + answerDto.getId() + " not found.");
+                    }
+
+                    return existingAnswer;
+                })
+                .collect(Collectors.toList());
+
+        // Проверка и привязка существующих категорий по id
+        Set<Category> categories = createFullQuestionDto.getCategories()
+                .stream()
+                .map(categoryDto -> {
+                    if (!Valid.isValidCategoryName(categoryDto.getName()))
+                        throw new IllegalArgumentException("Invalid category name");
+
+                    Category existingCategory = entityManager.find(Category.class, categoryDto.getId());
+                    if (existingCategory == null) {
+                        throw new IllegalArgumentException("Category with id " + categoryDto.getId() + " not found.");
+                    }
+
+                    return existingCategory;
+                })
+                .collect(Collectors.toSet());
+
+        // Проверка минимального количества ответов для категории История
+        if (categories.stream().anyMatch(category -> category.getName().equals("История")) &&
+                answers.size() < 2) {
+            throw new IllegalArgumentException("Вопросы по категории История должны обязательно содержать минимум 2 ответа");
+        }
+
+        // Присваиваем ответы и категории вопросу
+        question.setAnswers(answers);
+        question.setCategories(categories);
+
+        // Сохраняем вопрос в базу данных
+        entityManager.persist(question);
+
+        return question;
+    }
+
+    public Question createQuestionDtoWithUseIdsAnswerAndCategory(CreateQuestionDtoWithUseIdsAnswerAndCategory dto) {
+        if (!Valid.isValidText(dto.getLevel()))
+            throw new IllegalArgumentException("Invalid question level");
+        if (!Valid.isValidText(dto.getQuestionText()))
+            throw new IllegalArgumentException("Invalid question questionText");
+
+        Question question = new Question();
+        question.setQuestionText(dto.getQuestionText());
+        question.setLevel(dto.getLevel());
+
+        // Получаем ответы по их id
+        List<Answer> answers = dto.getAnswers().stream()
+                .map(answerIdDto -> answerService.getAnswerById(answerIdDto.getId()))
+                .collect(Collectors.toList());
+
+        // Получаем категории по их id
+        Set<Category> categories = dto.getCategories().stream()
+                .map(categoryIdDto -> categoryService.getCategoryById(categoryIdDto.getId()))
+                .collect(Collectors.toSet());
+
+        question.setAnswers(answers);
+        question.setCategories(categories);
+
+        // Проверка на минимальное количество ответов для категории "История"
+        if (categories.stream().anyMatch(category -> category.getName().equals("История")) &&
+                answers.size() < 2) {
+            throw new IllegalArgumentException("Вопросы по категории История должны обязательно содержать минимум 2 ответа");
+        }
+
+        return questionDao.save(question);
     }
 }
 
