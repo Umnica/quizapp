@@ -15,7 +15,7 @@ public class AnswerService {
     private final AnswerDao answerDao;
 
     @Autowired
-    public AnswerService(AnswerDao answerDao, AnswerMapper answerMapper) {
+    public AnswerService(AnswerDao answerDao) {
         this.answerDao = answerDao;
     }
 
@@ -35,10 +35,5 @@ public class AnswerService {
         Answer answer = new Answer();
         answer.setAnswerText(createAnswerDto.getAnswerText());
         return answerDao.save(answer);
-    }
-
-
-    public List<Answer> getAnswersByIds(List<Integer> answerIds) {
-        return answerIds.stream().map(this::getAnswerById).collect(Collectors.toList());
     }
 }
