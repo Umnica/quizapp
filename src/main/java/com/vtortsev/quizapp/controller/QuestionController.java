@@ -33,6 +33,14 @@ public class QuestionController {
         return questions.stream()
                 .map(questionMapper::toDto)
                 .collect(Collectors.toList());
+        /*return questions.stream() // не работает
+                .map(question -> {
+                    // Принудительная инициализация ленивой загрузки
+                    Hibernate.initialize(question.getAnswers());
+                    Hibernate.initialize(question.getCategories());
+                    return questionMapper.toDto(question);
+                })
+                .collect(Collectors.toList());*/
     }
 
     @GetMapping("/category/{category}")
