@@ -67,6 +67,12 @@ public class QuestionService {
     }
     @Transactional
     public Question createQuestion(CreateFullQuestionDto createFullQuestionDto) {
+        if (!Valid.isValidText(createFullQuestionDto.getLevel()))
+            throw new IllegalArgumentException("Invalid question level");
+        if (!Valid.isValidText(createFullQuestionDto.getQuestionText()))
+            throw new IllegalArgumentException("Invalid question questionText");
+
+
         Question question = new Question();
         question.setQuestionText(createFullQuestionDto.getQuestionText());
         question.setLevel(createFullQuestionDto.getLevel());
