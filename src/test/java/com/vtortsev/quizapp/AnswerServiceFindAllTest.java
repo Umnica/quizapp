@@ -15,7 +15,7 @@ import static org.junit.jupiter.api.Assertions.assertEquals;
 import static org.mockito.Mockito.when;
 
 @SpringBootTest
-public class AnswerServiceIntegrationTestFindAll {
+public class AnswerServiceFindAllTest {
     @Mock
     private AnswerDao answerDao;
 

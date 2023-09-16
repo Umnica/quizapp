@@ -258,3 +258,155 @@
 2023-09-17T01:45:05.442+04:00  INFO 16620 --- [SpringApplicationShutdownHook] j.LocalContainerEntityManagerFactoryBean : Closing JPA EntityManagerFactory for persistence unit 'default'
 2023-09-17T01:45:05.445+04:00  INFO 16620 --- [SpringApplicationShutdownHook] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Shutdown initiated...
 2023-09-17T01:45:05.449+04:00  INFO 16620 --- [SpringApplicationShutdownHook] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Shutdown completed.
+2023-09-17T02:08:57.317+04:00  INFO 8416 --- [main] c.vtortsev.quizapp.CategoryServiceTests  : Starting CategoryServiceTests using Java 20.0.2 with PID 8416 (started by Кирилл in C:\Users\Кирилл\Desktop\quizapp)
+2023-09-17T02:08:57.319+04:00  INFO 8416 --- [main] c.vtortsev.quizapp.CategoryServiceTests  : No active profile set, falling back to 1 default profile: "default"
+2023-09-17T02:08:57.879+04:00  INFO 8416 --- [main] .s.d.r.c.RepositoryConfigurationDelegate : Bootstrapping Spring Data JPA repositories in DEFAULT mode.
+2023-09-17T02:08:57.947+04:00  INFO 8416 --- [main] .s.d.r.c.RepositoryConfigurationDelegate : Finished Spring Data repository scanning in 60 ms. Found 3 JPA repository interfaces.
+2023-09-17T02:08:58.327+04:00  INFO 8416 --- [main] o.hibernate.jpa.internal.util.LogHelper  : HHH000204: Processing PersistenceUnitInfo [name: default]
+2023-09-17T02:08:58.377+04:00  INFO 8416 --- [main] org.hibernate.Version                    : HHH000412: Hibernate ORM core version 6.2.7.Final
+2023-09-17T02:08:58.379+04:00  INFO 8416 --- [main] org.hibernate.cfg.Environment            : HHH000406: Using bytecode reflection optimizer
+2023-09-17T02:08:58.526+04:00  INFO 8416 --- [main] o.h.b.i.BytecodeProviderInitiator        : HHH000021: Bytecode provider name : bytebuddy
+2023-09-17T02:08:58.635+04:00  INFO 8416 --- [main] o.s.o.j.p.SpringPersistenceUnitInfo      : No LoadTimeWeaver setup: ignoring JPA class transformer
+2023-09-17T02:08:58.651+04:00  INFO 8416 --- [main] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Starting...
+2023-09-17T02:08:58.837+04:00  INFO 8416 --- [main] com.zaxxer.hikari.pool.HikariPool        : HikariPool-1 - Added connection org.postgresql.jdbc.PgConnection@149aa7b2
+2023-09-17T02:08:58.839+04:00  INFO 8416 --- [main] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Start completed.
+2023-09-17T02:08:59.135+04:00  INFO 8416 --- [main] o.h.b.i.BytecodeProviderInitiator        : HHH000021: Bytecode provider name : bytebuddy
+2023-09-17T02:08:59.740+04:00  INFO 8416 --- [main] o.h.e.t.j.p.i.JtaPlatformInitiator       : HHH000490: Using JtaPlatform implementation: [org.hibernate.engine.transaction.jta.platform.internal.NoJtaPlatform]
+2023-09-17T02:08:59.816+04:00  INFO 8416 --- [main] j.LocalContainerEntityManagerFactoryBean : Initialized JPA EntityManagerFactory for persistence unit 'default'
+2023-09-17T02:09:00.636+04:00  INFO 8416 --- [main] c.vtortsev.quizapp.CategoryServiceTests  : Started CategoryServiceTests in 3.583 seconds (process running for 4.504)
+2023-09-17T02:09:01.366+04:00  INFO 8416 --- [SpringApplicationShutdownHook] j.LocalContainerEntityManagerFactoryBean : Closing JPA EntityManagerFactory for persistence unit 'default'
+2023-09-17T02:09:01.368+04:00  INFO 8416 --- [SpringApplicationShutdownHook] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Shutdown initiated...
+2023-09-17T02:09:01.378+04:00  INFO 8416 --- [SpringApplicationShutdownHook] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Shutdown completed.
+2023-09-17T02:25:14.663+04:00  INFO 18100 --- [main] c.vtortsev.quizapp.QuestionServiceTests  : Starting QuestionServiceTests using Java 20.0.2 with PID 18100 (started by Кирилл in C:\Users\Кирилл\Desktop\quizapp)
+2023-09-17T02:25:14.664+04:00  INFO 18100 --- [main] c.vtortsev.quizapp.QuestionServiceTests  : No active profile set, falling back to 1 default profile: "default"
+2023-09-17T02:25:15.231+04:00  INFO 18100 --- [main] .s.d.r.c.RepositoryConfigurationDelegate : Bootstrapping Spring Data JPA repositories in DEFAULT mode.
+2023-09-17T02:25:15.298+04:00  INFO 18100 --- [main] .s.d.r.c.RepositoryConfigurationDelegate : Finished Spring Data repository scanning in 58 ms. Found 3 JPA repository interfaces.
+2023-09-17T02:25:15.692+04:00  INFO 18100 --- [main] o.hibernate.jpa.internal.util.LogHelper  : HHH000204: Processing PersistenceUnitInfo [name: default]
+2023-09-17T02:25:15.739+04:00  INFO 18100 --- [main] org.hibernate.Version                    : HHH000412: Hibernate ORM core version 6.2.7.Final
+2023-09-17T02:25:15.740+04:00  INFO 18100 --- [main] org.hibernate.cfg.Environment            : HHH000406: Using bytecode reflection optimizer
+2023-09-17T02:25:15.879+04:00  INFO 18100 --- [main] o.h.b.i.BytecodeProviderInitiator        : HHH000021: Bytecode provider name : bytebuddy
+2023-09-17T02:25:15.986+04:00  INFO 18100 --- [main] o.s.o.j.p.SpringPersistenceUnitInfo      : No LoadTimeWeaver setup: ignoring JPA class transformer
+2023-09-17T02:25:16.001+04:00  INFO 18100 --- [main] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Starting...
+2023-09-17T02:25:16.186+04:00  INFO 18100 --- [main] com.zaxxer.hikari.pool.HikariPool        : HikariPool-1 - Added connection org.postgresql.jdbc.PgConnection@5864e8bf
+2023-09-17T02:25:16.189+04:00  INFO 18100 --- [main] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Start completed.
+2023-09-17T02:25:16.488+04:00  INFO 18100 --- [main] o.h.b.i.BytecodeProviderInitiator        : HHH000021: Bytecode provider name : bytebuddy
+2023-09-17T02:25:17.098+04:00  INFO 18100 --- [main] o.h.e.t.j.p.i.JtaPlatformInitiator       : HHH000490: Using JtaPlatform implementation: [org.hibernate.engine.transaction.jta.platform.internal.NoJtaPlatform]
+2023-09-17T02:25:17.177+04:00  INFO 18100 --- [main] j.LocalContainerEntityManagerFactoryBean : Initialized JPA EntityManagerFactory for persistence unit 'default'
+2023-09-17T02:25:17.960+04:00  INFO 18100 --- [main] c.vtortsev.quizapp.QuestionServiceTests  : Started QuestionServiceTests in 3.561 seconds (process running for 4.484)
+2023-09-17T02:25:18.505+04:00  INFO 18100 --- [SpringApplicationShutdownHook] j.LocalContainerEntityManagerFactoryBean : Closing JPA EntityManagerFactory for persistence unit 'default'
+2023-09-17T02:25:18.507+04:00  INFO 18100 --- [SpringApplicationShutdownHook] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Shutdown initiated...
+2023-09-17T02:25:18.511+04:00  INFO 18100 --- [SpringApplicationShutdownHook] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Shutdown completed.
+2023-09-17T02:32:54.909+04:00  INFO 2776 --- [main] c.vtortsev.quizapp.QuestionServiceTests  : Starting QuestionServiceTests using Java 20.0.2 with PID 2776 (started by Кирилл in C:\Users\Кирилл\Desktop\quizapp)
+2023-09-17T02:32:54.910+04:00  INFO 2776 --- [main] c.vtortsev.quizapp.QuestionServiceTests  : No active profile set, falling back to 1 default profile: "default"
+2023-09-17T02:32:55.483+04:00  INFO 2776 --- [main] .s.d.r.c.RepositoryConfigurationDelegate : Bootstrapping Spring Data JPA repositories in DEFAULT mode.
+2023-09-17T02:32:55.545+04:00  INFO 2776 --- [main] .s.d.r.c.RepositoryConfigurationDelegate : Finished Spring Data repository scanning in 54 ms. Found 3 JPA repository interfaces.
+2023-09-17T02:32:55.913+04:00  INFO 2776 --- [main] o.hibernate.jpa.internal.util.LogHelper  : HHH000204: Processing PersistenceUnitInfo [name: default]
+2023-09-17T02:32:55.967+04:00  INFO 2776 --- [main] org.hibernate.Version                    : HHH000412: Hibernate ORM core version 6.2.7.Final
+2023-09-17T02:32:55.969+04:00  INFO 2776 --- [main] org.hibernate.cfg.Environment            : HHH000406: Using bytecode reflection optimizer
+2023-09-17T02:32:56.114+04:00  INFO 2776 --- [main] o.h.b.i.BytecodeProviderInitiator        : HHH000021: Bytecode provider name : bytebuddy
+2023-09-17T02:32:56.216+04:00  INFO 2776 --- [main] o.s.o.j.p.SpringPersistenceUnitInfo      : No LoadTimeWeaver setup: ignoring JPA class transformer
+2023-09-17T02:32:56.231+04:00  INFO 2776 --- [main] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Starting...
+2023-09-17T02:32:56.425+04:00  INFO 2776 --- [main] com.zaxxer.hikari.pool.HikariPool        : HikariPool-1 - Added connection org.postgresql.jdbc.PgConnection@4ee8051c
+2023-09-17T02:32:56.427+04:00  INFO 2776 --- [main] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Start completed.
+2023-09-17T02:32:56.722+04:00  INFO 2776 --- [main] o.h.b.i.BytecodeProviderInitiator        : HHH000021: Bytecode provider name : bytebuddy
+2023-09-17T02:32:57.336+04:00  INFO 2776 --- [main] o.h.e.t.j.p.i.JtaPlatformInitiator       : HHH000490: Using JtaPlatform implementation: [org.hibernate.engine.transaction.jta.platform.internal.NoJtaPlatform]
+2023-09-17T02:32:57.408+04:00  INFO 2776 --- [main] j.LocalContainerEntityManagerFactoryBean : Initialized JPA EntityManagerFactory for persistence unit 'default'
+2023-09-17T02:32:58.213+04:00  INFO 2776 --- [main] c.vtortsev.quizapp.QuestionServiceTests  : Started QuestionServiceTests in 3.61 seconds (process running for 4.546)
+2023-09-17T02:32:58.838+04:00  INFO 2776 --- [SpringApplicationShutdownHook] j.LocalContainerEntityManagerFactoryBean : Closing JPA EntityManagerFactory for persistence unit 'default'
+2023-09-17T02:32:58.840+04:00  INFO 2776 --- [SpringApplicationShutdownHook] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Shutdown initiated...
+2023-09-17T02:32:58.843+04:00  INFO 2776 --- [SpringApplicationShutdownHook] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Shutdown completed.
+2023-09-17T02:36:12.107+04:00  INFO 16464 --- [main] c.vtortsev.quizapp.QuestionServiceTests  : Starting QuestionServiceTests using Java 20.0.2 with PID 16464 (started by Кирилл in C:\Users\Кирилл\Desktop\quizapp)
+2023-09-17T02:36:12.108+04:00  INFO 16464 --- [main] c.vtortsev.quizapp.QuestionServiceTests  : No active profile set, falling back to 1 default profile: "default"
+2023-09-17T02:36:12.677+04:00  INFO 16464 --- [main] .s.d.r.c.RepositoryConfigurationDelegate : Bootstrapping Spring Data JPA repositories in DEFAULT mode.
+2023-09-17T02:36:12.755+04:00  INFO 16464 --- [main] .s.d.r.c.RepositoryConfigurationDelegate : Finished Spring Data repository scanning in 68 ms. Found 3 JPA repository interfaces.
+2023-09-17T02:36:13.204+04:00  INFO 16464 --- [main] o.hibernate.jpa.internal.util.LogHelper  : HHH000204: Processing PersistenceUnitInfo [name: default]
+2023-09-17T02:36:13.262+04:00  INFO 16464 --- [main] org.hibernate.Version                    : HHH000412: Hibernate ORM core version 6.2.7.Final
+2023-09-17T02:36:13.264+04:00  INFO 16464 --- [main] org.hibernate.cfg.Environment            : HHH000406: Using bytecode reflection optimizer
+2023-09-17T02:36:13.412+04:00  INFO 16464 --- [main] o.h.b.i.BytecodeProviderInitiator        : HHH000021: Bytecode provider name : bytebuddy
+2023-09-17T02:36:13.514+04:00  INFO 16464 --- [main] o.s.o.j.p.SpringPersistenceUnitInfo      : No LoadTimeWeaver setup: ignoring JPA class transformer
+2023-09-17T02:36:13.531+04:00  INFO 16464 --- [main] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Starting...
+2023-09-17T02:36:13.732+04:00  INFO 16464 --- [main] com.zaxxer.hikari.pool.HikariPool        : HikariPool-1 - Added connection org.postgresql.jdbc.PgConnection@57ce2898
+2023-09-17T02:36:13.734+04:00  INFO 16464 --- [main] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Start completed.
+2023-09-17T02:36:14.038+04:00  INFO 16464 --- [main] o.h.b.i.BytecodeProviderInitiator        : HHH000021: Bytecode provider name : bytebuddy
+2023-09-17T02:36:14.633+04:00  INFO 16464 --- [main] o.h.e.t.j.p.i.JtaPlatformInitiator       : HHH000490: Using JtaPlatform implementation: [org.hibernate.engine.transaction.jta.platform.internal.NoJtaPlatform]
+2023-09-17T02:36:14.710+04:00  INFO 16464 --- [main] j.LocalContainerEntityManagerFactoryBean : Initialized JPA EntityManagerFactory for persistence unit 'default'
+2023-09-17T02:36:15.525+04:00  INFO 16464 --- [main] c.vtortsev.quizapp.QuestionServiceTests  : Started QuestionServiceTests in 3.696 seconds (process running for 4.708)
+2023-09-17T02:36:16.156+04:00  INFO 16464 --- [SpringApplicationShutdownHook] j.LocalContainerEntityManagerFactoryBean : Closing JPA EntityManagerFactory for persistence unit 'default'
+2023-09-17T02:36:16.158+04:00  INFO 16464 --- [SpringApplicationShutdownHook] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Shutdown initiated...
+2023-09-17T02:36:16.163+04:00  INFO 16464 --- [SpringApplicationShutdownHook] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Shutdown completed.
+2023-09-17T02:36:51.989+04:00  INFO 17584 --- [main] c.vtortsev.quizapp.QuestionServiceTests  : Starting QuestionServiceTests using Java 20.0.2 with PID 17584 (started by Кирилл in C:\Users\Кирилл\Desktop\quizapp)
+2023-09-17T02:36:51.990+04:00  INFO 17584 --- [main] c.vtortsev.quizapp.QuestionServiceTests  : No active profile set, falling back to 1 default profile: "default"
+2023-09-17T02:36:52.560+04:00  INFO 17584 --- [main] .s.d.r.c.RepositoryConfigurationDelegate : Bootstrapping Spring Data JPA repositories in DEFAULT mode.
+2023-09-17T02:36:52.628+04:00  INFO 17584 --- [main] .s.d.r.c.RepositoryConfigurationDelegate : Finished Spring Data repository scanning in 59 ms. Found 3 JPA repository interfaces.
+2023-09-17T02:36:53.011+04:00  INFO 17584 --- [main] o.hibernate.jpa.internal.util.LogHelper  : HHH000204: Processing PersistenceUnitInfo [name: default]
+2023-09-17T02:36:53.067+04:00  INFO 17584 --- [main] org.hibernate.Version                    : HHH000412: Hibernate ORM core version 6.2.7.Final
+2023-09-17T02:36:53.070+04:00  INFO 17584 --- [main] org.hibernate.cfg.Environment            : HHH000406: Using bytecode reflection optimizer
+2023-09-17T02:36:53.224+04:00  INFO 17584 --- [main] o.h.b.i.BytecodeProviderInitiator        : HHH000021: Bytecode provider name : bytebuddy
+2023-09-17T02:36:53.323+04:00  INFO 17584 --- [main] o.s.o.j.p.SpringPersistenceUnitInfo      : No LoadTimeWeaver setup: ignoring JPA class transformer
+2023-09-17T02:36:53.340+04:00  INFO 17584 --- [main] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Starting...
+2023-09-17T02:36:53.530+04:00  INFO 17584 --- [main] com.zaxxer.hikari.pool.HikariPool        : HikariPool-1 - Added connection org.postgresql.jdbc.PgConnection@4ee8051c
+2023-09-17T02:36:53.531+04:00  INFO 17584 --- [main] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Start completed.
+2023-09-17T02:36:53.825+04:00  INFO 17584 --- [main] o.h.b.i.BytecodeProviderInitiator        : HHH000021: Bytecode provider name : bytebuddy
+2023-09-17T02:36:54.440+04:00  INFO 17584 --- [main] o.h.e.t.j.p.i.JtaPlatformInitiator       : HHH000490: Using JtaPlatform implementation: [org.hibernate.engine.transaction.jta.platform.internal.NoJtaPlatform]
+2023-09-17T02:36:54.512+04:00  INFO 17584 --- [main] j.LocalContainerEntityManagerFactoryBean : Initialized JPA EntityManagerFactory for persistence unit 'default'
+2023-09-17T02:36:55.297+04:00  INFO 17584 --- [main] c.vtortsev.quizapp.QuestionServiceTests  : Started QuestionServiceTests in 3.56 seconds (process running for 4.479)
+2023-09-17T02:36:55.823+04:00  INFO 17584 --- [SpringApplicationShutdownHook] j.LocalContainerEntityManagerFactoryBean : Closing JPA EntityManagerFactory for persistence unit 'default'
+2023-09-17T02:36:55.826+04:00  INFO 17584 --- [SpringApplicationShutdownHook] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Shutdown initiated...
+2023-09-17T02:36:55.830+04:00  INFO 17584 --- [SpringApplicationShutdownHook] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Shutdown completed.
+2023-09-17T02:37:15.923+04:00  INFO 4532 --- [main] c.vtortsev.quizapp.QuestionServiceTests  : Starting QuestionServiceTests using Java 20.0.2 with PID 4532 (started by Кирилл in C:\Users\Кирилл\Desktop\quizapp)
+2023-09-17T02:37:15.925+04:00  INFO 4532 --- [main] c.vtortsev.quizapp.QuestionServiceTests  : No active profile set, falling back to 1 default profile: "default"
+2023-09-17T02:37:16.500+04:00  INFO 4532 --- [main] .s.d.r.c.RepositoryConfigurationDelegate : Bootstrapping Spring Data JPA repositories in DEFAULT mode.
+2023-09-17T02:37:16.562+04:00  INFO 4532 --- [main] .s.d.r.c.RepositoryConfigurationDelegate : Finished Spring Data repository scanning in 55 ms. Found 3 JPA repository interfaces.
+2023-09-17T02:37:16.942+04:00  INFO 4532 --- [main] o.hibernate.jpa.internal.util.LogHelper  : HHH000204: Processing PersistenceUnitInfo [name: default]
+2023-09-17T02:37:16.984+04:00  INFO 4532 --- [main] org.hibernate.Version                    : HHH000412: Hibernate ORM core version 6.2.7.Final
+2023-09-17T02:37:16.986+04:00  INFO 4532 --- [main] org.hibernate.cfg.Environment            : HHH000406: Using bytecode reflection optimizer
+2023-09-17T02:37:17.127+04:00  INFO 4532 --- [main] o.h.b.i.BytecodeProviderInitiator        : HHH000021: Bytecode provider name : bytebuddy
+2023-09-17T02:37:17.231+04:00  INFO 4532 --- [main] o.s.o.j.p.SpringPersistenceUnitInfo      : No LoadTimeWeaver setup: ignoring JPA class transformer
+2023-09-17T02:37:17.251+04:00  INFO 4532 --- [main] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Starting...
+2023-09-17T02:37:17.439+04:00  INFO 4532 --- [main] com.zaxxer.hikari.pool.HikariPool        : HikariPool-1 - Added connection org.postgresql.jdbc.PgConnection@7b297740
+2023-09-17T02:37:17.441+04:00  INFO 4532 --- [main] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Start completed.
+2023-09-17T02:37:17.715+04:00  INFO 4532 --- [main] o.h.b.i.BytecodeProviderInitiator        : HHH000021: Bytecode provider name : bytebuddy
+2023-09-17T02:37:18.310+04:00  INFO 4532 --- [main] o.h.e.t.j.p.i.JtaPlatformInitiator       : HHH000490: Using JtaPlatform implementation: [org.hibernate.engine.transaction.jta.platform.internal.NoJtaPlatform]
+2023-09-17T02:37:18.414+04:00  INFO 4532 --- [main] j.LocalContainerEntityManagerFactoryBean : Initialized JPA EntityManagerFactory for persistence unit 'default'
+2023-09-17T02:37:19.190+04:00  INFO 4532 --- [main] c.vtortsev.quizapp.QuestionServiceTests  : Started QuestionServiceTests in 3.542 seconds (process running for 4.529)
+2023-09-17T02:37:19.717+04:00  INFO 4532 --- [SpringApplicationShutdownHook] j.LocalContainerEntityManagerFactoryBean : Closing JPA EntityManagerFactory for persistence unit 'default'
+2023-09-17T02:37:19.719+04:00  INFO 4532 --- [SpringApplicationShutdownHook] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Shutdown initiated...
+2023-09-17T02:37:19.724+04:00  INFO 4532 --- [SpringApplicationShutdownHook] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Shutdown completed.
+2023-09-17T02:40:21.038+04:00  INFO 16672 --- [main] c.vtortsev.quizapp.QuestionServiceTests  : Starting QuestionServiceTests using Java 20.0.2 with PID 16672 (started by Кирилл in C:\Users\Кирилл\Desktop\quizapp)
+2023-09-17T02:40:21.040+04:00  INFO 16672 --- [main] c.vtortsev.quizapp.QuestionServiceTests  : No active profile set, falling back to 1 default profile: "default"
+2023-09-17T02:40:21.612+04:00  INFO 16672 --- [main] .s.d.r.c.RepositoryConfigurationDelegate : Bootstrapping Spring Data JPA repositories in DEFAULT mode.
+2023-09-17T02:40:21.685+04:00  INFO 16672 --- [main] .s.d.r.c.RepositoryConfigurationDelegate : Finished Spring Data repository scanning in 64 ms. Found 3 JPA repository interfaces.
+2023-09-17T02:40:22.059+04:00  INFO 16672 --- [main] o.hibernate.jpa.internal.util.LogHelper  : HHH000204: Processing PersistenceUnitInfo [name: default]
+2023-09-17T02:40:22.114+04:00  INFO 16672 --- [main] org.hibernate.Version                    : HHH000412: Hibernate ORM core version 6.2.7.Final
+2023-09-17T02:40:22.116+04:00  INFO 16672 --- [main] org.hibernate.cfg.Environment            : HHH000406: Using bytecode reflection optimizer
+2023-09-17T02:40:22.265+04:00  INFO 16672 --- [main] o.h.b.i.BytecodeProviderInitiator        : HHH000021: Bytecode provider name : bytebuddy
+2023-09-17T02:40:22.374+04:00  INFO 16672 --- [main] o.s.o.j.p.SpringPersistenceUnitInfo      : No LoadTimeWeaver setup: ignoring JPA class transformer
+2023-09-17T02:40:22.393+04:00  INFO 16672 --- [main] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Starting...
+2023-09-17T02:40:22.620+04:00  INFO 16672 --- [main] com.zaxxer.hikari.pool.HikariPool        : HikariPool-1 - Added connection org.postgresql.jdbc.PgConnection@4ee8051c
+2023-09-17T02:40:22.622+04:00  INFO 16672 --- [main] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Start completed.
+2023-09-17T02:40:22.921+04:00  INFO 16672 --- [main] o.h.b.i.BytecodeProviderInitiator        : HHH000021: Bytecode provider name : bytebuddy
+2023-09-17T02:40:23.524+04:00  INFO 16672 --- [main] o.h.e.t.j.p.i.JtaPlatformInitiator       : HHH000490: Using JtaPlatform implementation: [org.hibernate.engine.transaction.jta.platform.internal.NoJtaPlatform]
+2023-09-17T02:40:23.595+04:00  INFO 16672 --- [main] j.LocalContainerEntityManagerFactoryBean : Initialized JPA EntityManagerFactory for persistence unit 'default'
+2023-09-17T02:40:24.407+04:00  INFO 16672 --- [main] c.vtortsev.quizapp.QuestionServiceTests  : Started QuestionServiceTests in 3.624 seconds (process running for 4.547)
+2023-09-17T02:40:24.982+04:00  INFO 16672 --- [SpringApplicationShutdownHook] j.LocalContainerEntityManagerFactoryBean : Closing JPA EntityManagerFactory for persistence unit 'default'
+2023-09-17T02:40:24.984+04:00  INFO 16672 --- [SpringApplicationShutdownHook] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Shutdown initiated...
+2023-09-17T02:40:24.987+04:00  INFO 16672 --- [SpringApplicationShutdownHook] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Shutdown completed.
+2023-09-17T02:40:43.348+04:00  INFO 2352 --- [main] c.vtortsev.quizapp.QuestionServiceTests  : Starting QuestionServiceTests using Java 20.0.2 with PID 2352 (started by Кирилл in C:\Users\Кирилл\Desktop\quizapp)
+2023-09-17T02:40:43.350+04:00  INFO 2352 --- [main] c.vtortsev.quizapp.QuestionServiceTests  : No active profile set, falling back to 1 default profile: "default"
+2023-09-17T02:40:43.906+04:00  INFO 2352 --- [main] .s.d.r.c.RepositoryConfigurationDelegate : Bootstrapping Spring Data JPA repositories in DEFAULT mode.
+2023-09-17T02:40:43.969+04:00  INFO 2352 --- [main] .s.d.r.c.RepositoryConfigurationDelegate : Finished Spring Data repository scanning in 55 ms. Found 3 JPA repository interfaces.
+2023-09-17T02:40:44.337+04:00  INFO 2352 --- [main] o.hibernate.jpa.internal.util.LogHelper  : HHH000204: Processing PersistenceUnitInfo [name: default]
+2023-09-17T02:40:44.387+04:00  INFO 2352 --- [main] org.hibernate.Version                    : HHH000412: Hibernate ORM core version 6.2.7.Final
+2023-09-17T02:40:44.389+04:00  INFO 2352 --- [main] org.hibernate.cfg.Environment            : HHH000406: Using bytecode reflection optimizer
+2023-09-17T02:40:44.536+04:00  INFO 2352 --- [main] o.h.b.i.BytecodeProviderInitiator        : HHH000021: Bytecode provider name : bytebuddy
+2023-09-17T02:40:44.644+04:00  INFO 2352 --- [main] o.s.o.j.p.SpringPersistenceUnitInfo      : No LoadTimeWeaver setup: ignoring JPA class transformer
+2023-09-17T02:40:44.660+04:00  INFO 2352 --- [main] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Starting...
+2023-09-17T02:40:44.843+04:00  INFO 2352 --- [main] com.zaxxer.hikari.pool.HikariPool        : HikariPool-1 - Added connection org.postgresql.jdbc.PgConnection@77324a58
+2023-09-17T02:40:44.844+04:00  INFO 2352 --- [main] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Start completed.
+2023-09-17T02:40:45.115+04:00  INFO 2352 --- [main] o.h.b.i.BytecodeProviderInitiator        : HHH000021: Bytecode provider name : bytebuddy
+2023-09-17T02:40:45.711+04:00  INFO 2352 --- [main] o.h.e.t.j.p.i.JtaPlatformInitiator       : HHH000490: Using JtaPlatform implementation: [org.hibernate.engine.transaction.jta.platform.internal.NoJtaPlatform]
+2023-09-17T02:40:45.784+04:00  INFO 2352 --- [main] j.LocalContainerEntityManagerFactoryBean : Initialized JPA EntityManagerFactory for persistence unit 'default'
+2023-09-17T02:40:46.551+04:00  INFO 2352 --- [main] c.vtortsev.quizapp.QuestionServiceTests  : Started QuestionServiceTests in 3.475 seconds (process running for 4.402)
+2023-09-17T02:40:47.060+04:00  INFO 2352 --- [SpringApplicationShutdownHook] j.LocalContainerEntityManagerFactoryBean : Closing JPA EntityManagerFactory for persistence unit 'default'
+2023-09-17T02:40:47.061+04:00  INFO 2352 --- [SpringApplicationShutdownHook] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Shutdown initiated...
+2023-09-17T02:40:47.066+04:00  INFO 2352 --- [SpringApplicationShutdownHook] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Shutdown completed.
