@@ -18,7 +18,7 @@ public class Question {
     private String level;
     private String questionText;
 
-    @ManyToMany(fetch = FetchType.EAGER)
+    @ManyToMany(fetch = FetchType.LAZY)
     @JoinTable(
             name = "t_question_category",
             joinColumns = @JoinColumn(name = "question_id"),
@@ -26,7 +26,7 @@ public class Question {
     )
     private Set<Category> categories = new HashSet<>();
 
-    @OneToMany(mappedBy = "question", fetch = FetchType.EAGER) // Один вопрос имеет много ответов
+    @OneToMany(mappedBy = "question", fetch = FetchType.LAZY) // Один вопрос имеет много ответов
     private List<Answer> answers = new ArrayList<>();
 
 }

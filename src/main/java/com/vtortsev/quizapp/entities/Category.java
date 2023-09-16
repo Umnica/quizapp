@@ -15,6 +15,6 @@ public class Category {
     private Integer id;
     private String name;
 
-    @ManyToMany(mappedBy = "categories", fetch = FetchType.EAGER)
+    @ManyToMany(mappedBy = "categories", fetch = FetchType.LAZY)
     private Set<Question> questions = new HashSet<>();
 }
