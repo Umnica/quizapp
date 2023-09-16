@@ -12,9 +12,7 @@ public class Answer {
     private Integer id;
     private String answerText;
 
-    @ManyToOne(fetch = FetchType.LAZY)
+    @ManyToOne(fetch = FetchType.EAGER)
     @JoinColumn(name = "question_id")
     private Question question;
-
-
 }

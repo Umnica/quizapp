@@ -6,6 +6,7 @@ import com.vtortsev.quizapp.dto.mapper.QuestionMapper;
 import com.vtortsev.quizapp.entities.Question;
 import com.vtortsev.quizapp.service.QuestionService;
 import lombok.extern.slf4j.Slf4j;
+import org.hibernate.Hibernate;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.*;
 
@@ -32,6 +33,14 @@ public class QuestionController {
         return questions.stream()
                 .map(questionMapper::toDto)
                 .collect(Collectors.toList());
+        /*return questions.stream() // не работает
+                .map(question -> {
+                    // Принудительная инициализация ленивой загрузки
+                    Hibernate.initialize(question.getAnswers());
+                    Hibernate.initialize(question.getCategories());
+                    return questionMapper.toDto(question);
+                })
+                .collect(Collectors.toList());*/
     }
 
     @GetMapping("/{id}")
