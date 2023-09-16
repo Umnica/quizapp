@@ -1,9 +1,7 @@
 package com.vtortsev.quizapp.controller;
 
 import com.vtortsev.quizapp.dto.CategoryDto;
-import com.vtortsev.quizapp.dto.QuestionDto;
 import com.vtortsev.quizapp.dto.createEntityDto.CreateCategoryDto;
-import com.vtortsev.quizapp.dto.createEntityDto.CreateQuestionDto;
 import com.vtortsev.quizapp.dto.mapper.CategoryMapper;
 import com.vtortsev.quizapp.entities.Category;
 import com.vtortsev.quizapp.service.CategoryService;
