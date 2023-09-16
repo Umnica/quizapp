@@ -80,6 +80,9 @@ public class QuestionService {
         List<Answer> answers = createFullQuestionDto.getAnswers()
                 .stream()
                 .map(answerDto -> {
+                    if (!Valid.isValidText(answerDto.getAnswerText()))
+                        throw new IllegalArgumentException("Invalid answer answerText");
+
                     Answer answer = new Answer();
                     answer.setAnswerText(answerDto.getAnswerText());
                     return answer;
@@ -96,12 +99,21 @@ public class QuestionService {
                         return existingCategory;
                     } else {
                         // Если категория не существует, создаем новую
+                        if (!Valid.isValidCategoryName(categoryDto.getName()))
+                            throw new IllegalArgumentException("Invalid category name");
+
                         Category newCategory = new Category();
                         newCategory.setName(categoryDto.getName());
                         return newCategory;
                     }
                 })
                 .collect(Collectors.toSet());
+
+        // Проверка минимального количества ответов для категории "История"
+        if (categories.stream().anyMatch(category -> category.getName().equals("История")) &&
+                answers.size() < 2) {
+            throw new IllegalArgumentException("Вопросы по категории История должны содержать минимум 2 ответа");
+        }
 
         // Сохраняем ответы и категории в базу данных
         answers.forEach(entityManager::persist);
