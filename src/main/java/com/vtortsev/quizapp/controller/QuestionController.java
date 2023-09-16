@@ -1,6 +1,6 @@
 package com.vtortsev.quizapp.controller;
 
-import com.vtortsev.quizapp.dto.createEntityDto.CreateQuestionDto;
+import com.vtortsev.quizapp.dto.CreateQuestionDto;
 import com.vtortsev.quizapp.dto.QuestionDto;
 import com.vtortsev.quizapp.dto.mapper.QuestionMapper;
 import com.vtortsev.quizapp.entities.Question;

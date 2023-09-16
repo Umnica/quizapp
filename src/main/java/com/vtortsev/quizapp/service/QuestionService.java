@@ -1,7 +1,7 @@
 package com.vtortsev.quizapp.service;
 
 import com.vtortsev.quizapp.dao.QuestionDao;
-import com.vtortsev.quizapp.dto.createEntityDto.CreateQuestionDto;
+import com.vtortsev.quizapp.dto.CreateQuestionDto;
 import com.vtortsev.quizapp.entities.Question;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
