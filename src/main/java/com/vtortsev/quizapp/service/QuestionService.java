@@ -1,17 +1,12 @@
 package com.vtortsev.quizapp.service;
 
 import com.vtortsev.quizapp.dao.QuestionDao;
-import com.vtortsev.quizapp.dto.createEntityDto.CreateFullQuestionDto;
-import com.vtortsev.quizapp.dto.createEntityDto.CreateQuestionDto;
 import com.vtortsev.quizapp.dto.createEntityDto.CreateQuestionDtoWithUseIdsAnswerAndCategory;
 import com.vtortsev.quizapp.entities.Answer;
 import com.vtortsev.quizapp.entities.Category;
 import com.vtortsev.quizapp.entities.Question;
-import jakarta.persistence.EntityManager;
-import jakarta.persistence.PersistenceContext;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
-import org.springframework.transaction.annotation.Transactional;
 
 import java.util.ArrayList;
 import java.util.HashSet;
@@ -22,9 +17,6 @@ public class QuestionService {
     private final QuestionDao questionDao; // это объект для работы с бд DataAccessObject
     private final CategoryService categoryService;
     private final AnswerService answerService;
-
-    @PersistenceContext
-    private EntityManager entityManager;
 
     @Autowired
     public QuestionService(QuestionDao questionDao, CategoryService categoryService, AnswerService answerService) {

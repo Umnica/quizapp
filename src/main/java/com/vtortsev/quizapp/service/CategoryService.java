@@ -34,8 +34,4 @@ public class CategoryService {
         category.setName(createCategoryDto.getName());
         return categoryDao.save(category);
     }
-
-    public List<Category> getCategoriesByIds(List<Integer> categoryIds) {
-        return categoryIds.stream().map(this::getCategoryById).collect(Collectors.toList());
-    }
 }
