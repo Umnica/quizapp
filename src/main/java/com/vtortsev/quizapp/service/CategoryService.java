@@ -23,6 +23,9 @@ public class CategoryService {
     }
 
     public Category createCategory(CreateCategoryDto createCategoryDto) {
+        if (!Valid.isValidCategoryName(createCategoryDto.getName()))
+            throw new IllegalArgumentException("Invalid category name");
+
         Category category = new Category();
         category.setName(createCategoryDto.getName());
         return categoryDao.save(category);
