@@ -5,6 +5,8 @@ import com.vtortsev.quizapp.dto.createEntityDto.CreateQuestionDto;
 import com.vtortsev.quizapp.dto.mapper.QuestionMapper;
 import com.vtortsev.quizapp.entities.Question;
 import com.vtortsev.quizapp.service.QuestionService;
+import lombok.extern.slf4j.Slf4j;
+import org.hibernate.Hibernate;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.HttpStatus;
 import org.springframework.web.bind.annotation.*;
@@ -41,6 +43,11 @@ public class QuestionController {
                     return questionMapper.toDto(question);
                 })
                 .collect(Collectors.toList());*/
+    }
+
+    @GetMapping("/{id}")
+    public FullQuestionDto getQuestionById(@PathVariable Integer id) {
+        return questionMapper.toFullDto(questionService.getQuestionById(id));
     }
 
 
