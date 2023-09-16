@@ -1,7 +1,7 @@
 package com.vtortsev.quizapp.controller;
 
-import com.vtortsev.quizapp.dto.CreateQuestionDto;
 import com.vtortsev.quizapp.dto.QuestionDto;
+import com.vtortsev.quizapp.dto.createEntityDto.CreateQuestionDto;
 import com.vtortsev.quizapp.dto.mapper.QuestionMapper;
 import com.vtortsev.quizapp.entities.Question;
 import com.vtortsev.quizapp.service.QuestionService;
@@ -60,18 +60,12 @@ public class QuestionController {
                 .collect(Collectors.toList());
     }
 
-   /* @PostMapping("/add")
-    public QuestionDto addQuestion(@RequestBody Question question) {
-        Question question1 = questionService.addQuestion(question);
-        return questionMapper.toDto(question1);
-    }*/
 
     @PostMapping
     @ResponseStatus(HttpStatus.CREATED)
     public QuestionDto createQuestion(@RequestBody CreateQuestionDto createQuestionDto) {
         return questionMapper.toDto(questionService.createQuestion(createQuestionDto));
     }
-
 
 
     @GetMapping("/delete/{id}")
