@@ -2,6 +2,7 @@ package com.vtortsev.quizapp.controller;
 
 import com.vtortsev.quizapp.dto.FullQuestionDto;
 import com.vtortsev.quizapp.dto.QuestionDto;
+import com.vtortsev.quizapp.dto.createEntityDto.CreateFullQuestionDto;
 import com.vtortsev.quizapp.dto.createEntityDto.CreateQuestionDto;
 import com.vtortsev.quizapp.dto.mapper.QuestionMapper;
 import com.vtortsev.quizapp.entities.Question;
@@ -28,6 +29,7 @@ public class QuestionController {
         this.questionMapper = questionMapper;
     }
 
+
     @GetMapping
     public List<QuestionDto> getAllQuestions() {
         List<Question> questions = questionService.getAllQuestions();
@@ -44,6 +46,7 @@ public class QuestionController {
                 .collect(Collectors.toList());*/
     }
 
+
     @GetMapping("/{id}")
     public FullQuestionDto getQuestionById(@PathVariable Integer id) {
         return questionMapper.toFullDto(questionService.getQuestionById(id));
@@ -58,6 +61,7 @@ public class QuestionController {
                 .collect(Collectors.toList());
     }
 
+
     @GetMapping("/level/{level}")
     public List<QuestionDto> getQuestionByLevel(@PathVariable String level) {
         List<Question> questions = questionService.getQuestionByLevel(level);
@@ -69,8 +73,11 @@ public class QuestionController {
 
     @PostMapping
     @ResponseStatus(HttpStatus.CREATED)
-    public QuestionDto createQuestion(@RequestBody CreateQuestionDto createQuestionDto) {
+    /*public QuestionDto createQuestion(@RequestBody CreateQuestionDto createQuestionDto) {
         return questionMapper.toDto(questionService.createQuestion(createQuestionDto));
+    }*/
+    public FullQuestionDto createFullQuestion(@RequestBody CreateFullQuestionDto createFullQuestionDto) {
+        return questionMapper.toFullDto(questionService.createQuestion(createFullQuestionDto));
     }
 
 
