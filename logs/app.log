@@ -104,3 +104,74 @@
 2023-09-16T18:17:19.865+04:00  INFO 11164 --- [SpringApplicationShutdownHook] j.LocalContainerEntityManagerFactoryBean : Closing JPA EntityManagerFactory for persistence unit 'default'
 2023-09-16T18:17:19.867+04:00  INFO 11164 --- [SpringApplicationShutdownHook] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Shutdown initiated...
 2023-09-16T18:17:19.871+04:00  INFO 11164 --- [SpringApplicationShutdownHook] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Shutdown completed.
+2023-09-16T18:28:54.851+04:00  INFO 14024 --- [main] c.vtortsev.quizapp.QuizappApplication    : Starting QuizappApplication using Java 20.0.2 with PID 14024 (C:\Users\Кирилл\Desktop\quizapp\target\classes started by Кирилл in C:\Users\Кирилл\Desktop\quizapp)
+2023-09-16T18:28:54.855+04:00  INFO 14024 --- [main] c.vtortsev.quizapp.QuizappApplication    : No active profile set, falling back to 1 default profile: "default"
+2023-09-16T18:28:55.610+04:00  INFO 14024 --- [main] .s.d.r.c.RepositoryConfigurationDelegate : Bootstrapping Spring Data JPA repositories in DEFAULT mode.
+2023-09-16T18:28:55.689+04:00  INFO 14024 --- [main] .s.d.r.c.RepositoryConfigurationDelegate : Finished Spring Data repository scanning in 67 ms. Found 3 JPA repository interfaces.
+2023-09-16T18:28:56.286+04:00  INFO 14024 --- [main] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat initialized with port(s): 9090 (http)
+2023-09-16T18:28:56.299+04:00  INFO 14024 --- [main] o.apache.catalina.core.StandardService   : Starting service [Tomcat]
+2023-09-16T18:28:56.299+04:00  INFO 14024 --- [main] o.apache.catalina.core.StandardEngine    : Starting Servlet engine: [Apache Tomcat/10.1.12]
+2023-09-16T18:28:56.376+04:00  INFO 14024 --- [main] o.a.c.c.C.[Tomcat].[localhost].[/]       : Initializing Spring embedded WebApplicationContext
+2023-09-16T18:28:56.376+04:00  INFO 14024 --- [main] w.s.c.ServletWebServerApplicationContext : Root WebApplicationContext: initialization completed in 1446 ms
+2023-09-16T18:28:56.535+04:00  INFO 14024 --- [main] o.hibernate.jpa.internal.util.LogHelper  : HHH000204: Processing PersistenceUnitInfo [name: default]
+2023-09-16T18:28:56.589+04:00  INFO 14024 --- [main] org.hibernate.Version                    : HHH000412: Hibernate ORM core version 6.2.7.Final
+2023-09-16T18:28:56.591+04:00  INFO 14024 --- [main] org.hibernate.cfg.Environment            : HHH000406: Using bytecode reflection optimizer
+2023-09-16T18:28:56.715+04:00  INFO 14024 --- [main] o.h.b.i.BytecodeProviderInitiator        : HHH000021: Bytecode provider name : bytebuddy
+2023-09-16T18:28:56.821+04:00  INFO 14024 --- [main] o.s.o.j.p.SpringPersistenceUnitInfo      : No LoadTimeWeaver setup: ignoring JPA class transformer
+2023-09-16T18:28:56.834+04:00  INFO 14024 --- [main] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Starting...
+2023-09-16T18:28:56.996+04:00  INFO 14024 --- [main] com.zaxxer.hikari.pool.HikariPool        : HikariPool-1 - Added connection org.postgresql.jdbc.PgConnection@73e1ecd0
+2023-09-16T18:28:56.998+04:00  INFO 14024 --- [main] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Start completed.
+2023-09-16T18:28:57.287+04:00  INFO 14024 --- [main] o.h.b.i.BytecodeProviderInitiator        : HHH000021: Bytecode provider name : bytebuddy
+2023-09-16T18:28:57.856+04:00  INFO 14024 --- [main] o.h.e.t.j.p.i.JtaPlatformInitiator       : HHH000490: Using JtaPlatform implementation: [org.hibernate.engine.transaction.jta.platform.internal.NoJtaPlatform]
+2023-09-16T18:28:57.928+04:00  INFO 14024 --- [main] j.LocalContainerEntityManagerFactoryBean : Initialized JPA EntityManagerFactory for persistence unit 'default'
+2023-09-16T18:28:58.529+04:00  INFO 14024 --- [main] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat started on port(s): 9090 (http) with context path ''
+2023-09-16T18:28:58.538+04:00  INFO 14024 --- [main] c.vtortsev.quizapp.QuizappApplication    : Started QuizappApplication in 4.229 seconds (process running for 4.666)
+2023-09-16T18:29:10.187+04:00  INFO 14024 --- [http-nio-9090-exec-2] o.a.c.c.C.[Tomcat].[localhost].[/]       : Initializing Spring DispatcherServlet 'dispatcherServlet'
+2023-09-16T18:29:10.187+04:00  INFO 14024 --- [http-nio-9090-exec-2] o.s.web.servlet.DispatcherServlet        : Initializing Servlet 'dispatcherServlet'
+2023-09-16T18:29:10.188+04:00  INFO 14024 --- [http-nio-9090-exec-2] o.s.web.servlet.DispatcherServlet        : Completed initialization in 1 ms
+2023-09-16T18:30:15.608+04:00  WARN 14024 --- [http-nio-9090-exec-5] o.h.engine.jdbc.spi.SqlExceptionHelper   : SQL Error: 0, SQLState: 23505
+2023-09-16T18:30:15.608+04:00 ERROR 14024 --- [http-nio-9090-exec-5] o.h.engine.jdbc.spi.SqlExceptionHelper   : ОШИБКА: повторяющееся значение ключа нарушает ограничение уникальности "categories_pkey"
+  Подробности: Ключ "(id)=(1)" уже существует.
+2023-09-16T18:30:15.616+04:00 ERROR 14024 --- [http-nio-9090-exec-5] c.v.q.exception.GlobalExceptionHandler   : Error occurred for endpoint /categories: could not execute statement [ОШИБКА: повторяющееся значение ключа нарушает ограничение уникальности "categories_pkey"
+  Подробности: Ключ "(id)=(1)" уже существует.] [insert into t_categories (name) values (?)]; SQL [insert into t_categories (name) values (?)]; constraint [null]
+2023-09-16T18:30:35.061+04:00  WARN 14024 --- [http-nio-9090-exec-7] o.h.engine.jdbc.spi.SqlExceptionHelper   : SQL Error: 0, SQLState: 23505
+2023-09-16T18:30:35.062+04:00 ERROR 14024 --- [http-nio-9090-exec-7] o.h.engine.jdbc.spi.SqlExceptionHelper   : ОШИБКА: повторяющееся значение ключа нарушает ограничение уникальности "categories_pkey"
+  Подробности: Ключ "(id)=(2)" уже существует.
+2023-09-16T18:30:35.063+04:00 ERROR 14024 --- [http-nio-9090-exec-7] c.v.q.exception.GlobalExceptionHandler   : Error occurred for endpoint /categories: could not execute statement [ОШИБКА: повторяющееся значение ключа нарушает ограничение уникальности "categories_pkey"
+  Подробности: Ключ "(id)=(2)" уже существует.] [insert into t_categories (name) values (?)]; SQL [insert into t_categories (name) values (?)]; constraint [null]
+2023-09-16T18:30:35.720+04:00  WARN 14024 --- [http-nio-9090-exec-9] o.h.engine.jdbc.spi.SqlExceptionHelper   : SQL Error: 0, SQLState: 23505
+2023-09-16T18:30:35.721+04:00 ERROR 14024 --- [http-nio-9090-exec-9] o.h.engine.jdbc.spi.SqlExceptionHelper   : ОШИБКА: повторяющееся значение ключа нарушает ограничение уникальности "categories_pkey"
+  Подробности: Ключ "(id)=(3)" уже существует.
+2023-09-16T18:30:35.721+04:00 ERROR 14024 --- [http-nio-9090-exec-9] c.v.q.exception.GlobalExceptionHandler   : Error occurred for endpoint /categories: could not execute statement [ОШИБКА: повторяющееся значение ключа нарушает ограничение уникальности "categories_pkey"
+  Подробности: Ключ "(id)=(3)" уже существует.] [insert into t_categories (name) values (?)]; SQL [insert into t_categories (name) values (?)]; constraint [null]
+2023-09-16T18:31:26.156+04:00  INFO 14024 --- [SpringApplicationShutdownHook] j.LocalContainerEntityManagerFactoryBean : Closing JPA EntityManagerFactory for persistence unit 'default'
+2023-09-16T18:31:26.158+04:00  INFO 14024 --- [SpringApplicationShutdownHook] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Shutdown initiated...
+2023-09-16T18:31:26.164+04:00  INFO 14024 --- [SpringApplicationShutdownHook] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Shutdown completed.
+2023-09-16T18:35:28.942+04:00  INFO 1588 --- [main] c.vtortsev.quizapp.QuizappApplication    : Starting QuizappApplication using Java 20.0.2 with PID 1588 (C:\Users\Кирилл\Desktop\quizapp\target\classes started by Кирилл in C:\Users\Кирилл\Desktop\quizapp)
+2023-09-16T18:35:28.945+04:00  INFO 1588 --- [main] c.vtortsev.quizapp.QuizappApplication    : No active profile set, falling back to 1 default profile: "default"
+2023-09-16T18:35:29.552+04:00  INFO 1588 --- [main] .s.d.r.c.RepositoryConfigurationDelegate : Bootstrapping Spring Data JPA repositories in DEFAULT mode.
+2023-09-16T18:35:29.625+04:00  INFO 1588 --- [main] .s.d.r.c.RepositoryConfigurationDelegate : Finished Spring Data repository scanning in 66 ms. Found 3 JPA repository interfaces.
+2023-09-16T18:35:30.303+04:00  INFO 1588 --- [main] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat initialized with port(s): 9090 (http)
+2023-09-16T18:35:30.311+04:00  INFO 1588 --- [main] o.apache.catalina.core.StandardService   : Starting service [Tomcat]
+2023-09-16T18:35:30.311+04:00  INFO 1588 --- [main] o.apache.catalina.core.StandardEngine    : Starting Servlet engine: [Apache Tomcat/10.1.12]
+2023-09-16T18:35:30.388+04:00  INFO 1588 --- [main] o.a.c.c.C.[Tomcat].[localhost].[/]       : Initializing Spring embedded WebApplicationContext
+2023-09-16T18:35:30.388+04:00  INFO 1588 --- [main] w.s.c.ServletWebServerApplicationContext : Root WebApplicationContext: initialization completed in 1382 ms
+2023-09-16T18:35:30.547+04:00  INFO 1588 --- [main] o.hibernate.jpa.internal.util.LogHelper  : HHH000204: Processing PersistenceUnitInfo [name: default]
+2023-09-16T18:35:30.614+04:00  INFO 1588 --- [main] org.hibernate.Version                    : HHH000412: Hibernate ORM core version 6.2.7.Final
+2023-09-16T18:35:30.616+04:00  INFO 1588 --- [main] org.hibernate.cfg.Environment            : HHH000406: Using bytecode reflection optimizer
+2023-09-16T18:35:30.740+04:00  INFO 1588 --- [main] o.h.b.i.BytecodeProviderInitiator        : HHH000021: Bytecode provider name : bytebuddy
+2023-09-16T18:35:30.958+04:00  INFO 1588 --- [main] o.s.o.j.p.SpringPersistenceUnitInfo      : No LoadTimeWeaver setup: ignoring JPA class transformer
+2023-09-16T18:35:30.973+04:00  INFO 1588 --- [main] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Starting...
+2023-09-16T18:35:31.134+04:00  INFO 1588 --- [main] com.zaxxer.hikari.pool.HikariPool        : HikariPool-1 - Added connection org.postgresql.jdbc.PgConnection@2a99ca99
+2023-09-16T18:35:31.136+04:00  INFO 1588 --- [main] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Start completed.
+2023-09-16T18:35:31.451+04:00  INFO 1588 --- [main] o.h.b.i.BytecodeProviderInitiator        : HHH000021: Bytecode provider name : bytebuddy
+2023-09-16T18:35:32.029+04:00  INFO 1588 --- [main] o.h.e.t.j.p.i.JtaPlatformInitiator       : HHH000490: Using JtaPlatform implementation: [org.hibernate.engine.transaction.jta.platform.internal.NoJtaPlatform]
+2023-09-16T18:35:32.116+04:00  INFO 1588 --- [main] j.LocalContainerEntityManagerFactoryBean : Initialized JPA EntityManagerFactory for persistence unit 'default'
+2023-09-16T18:35:32.759+04:00  INFO 1588 --- [main] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat started on port(s): 9090 (http) with context path ''
+2023-09-16T18:35:32.767+04:00  INFO 1588 --- [main] c.vtortsev.quizapp.QuizappApplication    : Started QuizappApplication in 4.336 seconds (process running for 4.77)
+2023-09-16T18:35:50.808+04:00  INFO 1588 --- [http-nio-9090-exec-2] o.a.c.c.C.[Tomcat].[localhost].[/]       : Initializing Spring DispatcherServlet 'dispatcherServlet'
+2023-09-16T18:35:50.808+04:00  INFO 1588 --- [http-nio-9090-exec-2] o.s.web.servlet.DispatcherServlet        : Initializing Servlet 'dispatcherServlet'
+2023-09-16T18:35:50.809+04:00  INFO 1588 --- [http-nio-9090-exec-2] o.s.web.servlet.DispatcherServlet        : Completed initialization in 1 ms
+2023-09-16T18:36:43.935+04:00  INFO 1588 --- [SpringApplicationShutdownHook] j.LocalContainerEntityManagerFactoryBean : Closing JPA EntityManagerFactory for persistence unit 'default'
+2023-09-16T18:36:43.937+04:00  INFO 1588 --- [SpringApplicationShutdownHook] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Shutdown initiated...
+2023-09-16T18:36:43.943+04:00  INFO 1588 --- [SpringApplicationShutdownHook] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Shutdown completed.

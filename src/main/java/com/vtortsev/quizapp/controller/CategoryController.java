@@ -1,13 +1,15 @@
 package com.vtortsev.quizapp.controller;
 
 import com.vtortsev.quizapp.dto.CategoryDto;
+import com.vtortsev.quizapp.dto.QuestionDto;
+import com.vtortsev.quizapp.dto.createEntityDto.CreateCategoryDto;
+import com.vtortsev.quizapp.dto.createEntityDto.CreateQuestionDto;
 import com.vtortsev.quizapp.dto.mapper.CategoryMapper;
 import com.vtortsev.quizapp.entities.Category;
 import com.vtortsev.quizapp.service.CategoryService;
 import org.springframework.beans.factory.annotation.Autowired;
-import org.springframework.web.bind.annotation.GetMapping;
-import org.springframework.web.bind.annotation.RequestMapping;
-import org.springframework.web.bind.annotation.RestController;
+import org.springframework.http.HttpStatus;
+import org.springframework.web.bind.annotation.*;
 
 import java.util.List;
 import java.util.stream.Collectors;
@@ -22,6 +24,11 @@ public class CategoryController {
     public CategoryController(CategoryService categoryService, CategoryMapper categoryMapper) {
         this.categoryService = categoryService;
         this.categoryMapper = categoryMapper;
+    }
+    @PostMapping
+    @ResponseStatus(HttpStatus.CREATED)
+    public CategoryDto createCategory(@RequestBody CreateCategoryDto createCategoryDto) {
+        return categoryMapper.toDto(categoryService.createCategory(createCategoryDto));
     }
 
     @GetMapping

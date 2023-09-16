@@ -1,15 +1,16 @@
 package com.vtortsev.quizapp.controller;
 
 import com.vtortsev.quizapp.dto.AnswerDto;
+import com.vtortsev.quizapp.dto.CategoryDto;
+import com.vtortsev.quizapp.dto.createEntityDto.CreateAnswerDto;
+import com.vtortsev.quizapp.dto.createEntityDto.CreateCategoryDto;
 import com.vtortsev.quizapp.entities.Answer;
 import com.vtortsev.quizapp.dto.mapper.AnswerMapper;
 import com.vtortsev.quizapp.service.AnswerService;
 import lombok.extern.slf4j.Slf4j;
 import org.springframework.beans.factory.annotation.Autowired;
-import org.springframework.web.bind.annotation.GetMapping;
-import org.springframework.web.bind.annotation.RequestMapping;
-import org.springframework.web.bind.annotation.ResponseBody;
-import org.springframework.web.bind.annotation.RestController;
+import org.springframework.http.HttpStatus;
+import org.springframework.web.bind.annotation.*;
 
 import java.util.List;
 import java.util.stream.Collectors;
@@ -25,6 +26,12 @@ public class AnswerController {
     public AnswerController(AnswerService answerService, AnswerMapper answerMapper) {
         this.answerService = answerService;
         this.answerMapper = answerMapper;
+    }
+
+    @PostMapping
+    @ResponseStatus(HttpStatus.CREATED)
+    public AnswerDto createAnswer(@RequestBody CreateAnswerDto createAnswerDto) {
+        return answerMapper.toDto(answerService.createAnswer(createAnswerDto));
     }
 
     @GetMapping
