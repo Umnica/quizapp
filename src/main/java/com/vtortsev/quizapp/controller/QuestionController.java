@@ -2,7 +2,6 @@ package com.vtortsev.quizapp.controller;
 
 import com.vtortsev.quizapp.dto.FullQuestionDto;
 import com.vtortsev.quizapp.dto.QuestionDto;
-import com.vtortsev.quizapp.dto.createEntityDto.CreateFullQuestionDto;
 import com.vtortsev.quizapp.dto.createEntityDto.CreateQuestionDtoWithUseIdsAnswerAndCategory;
 import com.vtortsev.quizapp.dto.mapper.QuestionMapper;
 import com.vtortsev.quizapp.entities.Question;
@@ -36,14 +35,6 @@ public class QuestionController {
         return questions.stream()
                 .map(questionMapper::toDto)
                 .collect(Collectors.toList());
-        /*return questions.stream() // не работает
-                .map(question -> {
-                    // Принудительная инициализация ленивой загрузки
-                    Hibernate.initialize(question.getAnswers());
-                    Hibernate.initialize(question.getCategories());
-                    return questionMapper.toDto(question);
-                })
-                .collect(Collectors.toList());*/
     }
 
 
