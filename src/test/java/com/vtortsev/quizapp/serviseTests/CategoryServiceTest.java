@@ -14,6 +14,8 @@ import java.util.List;
 import java.util.Optional;
 
 import static org.junit.jupiter.api.Assertions.assertEquals;
+import static org.junit.jupiter.api.Assertions.assertNotNull;
+import static org.mockito.ArgumentMatchers.any;
 import static org.mockito.Mockito.when;
 
 @SpringBootTest
@@ -65,11 +67,15 @@ public class CategoryServiceTest {
         Category category = new Category();
         category.setName("Category 1");
 
-        when(categoryDao.save(category)).thenReturn(category);
-
+        when(categoryDao.save(any(Category.class))).thenAnswer(invocation -> {
+            Category savedCategory = invocation.getArgument(0);  // Получить аргумент, переданный методу сохранения
+            savedCategory.setId(1);  // Устанавлеваем id образца для сохраненной категории
+            return savedCategory;
+        });
         Category actualCategory = categoryService.createCategory(dto);
 
-        assertEquals(category, actualCategory);
+        assertNotNull(actualCategory.getId());
+        assertEquals(category.getName(), actualCategory.getName());
     }
 
 
