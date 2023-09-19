@@ -8,18 +8,15 @@ import org.junit.jupiter.api.Test;
 import org.mockito.InjectMocks;
 import org.mockito.Mock;
 import org.springframework.boot.test.context.SpringBootTest;
-import org.springframework.transaction.annotation.Transactional;
 
 import java.util.ArrayList;
 import java.util.List;
 import java.util.Optional;
 
 import static org.junit.jupiter.api.Assertions.assertEquals;
-import static org.junit.jupiter.api.Assertions.assertThrows;
 import static org.mockito.Mockito.when;
 
 @SpringBootTest
-@Transactional
 public class CategoryServiceTest {
     @Mock
     private CategoryDao categoryDao;
@@ -27,7 +24,6 @@ public class CategoryServiceTest {
     private CategoryService categoryService;
 
     @Test
-    @Transactional
     void testGetCategoryById() {
         Integer categoryId = 1;
 
