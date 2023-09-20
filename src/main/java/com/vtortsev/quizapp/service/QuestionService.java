@@ -83,7 +83,11 @@ public class QuestionService {
                 throw new IllegalArgumentException("В базе данных не существует категории с id: " + id);
             categories.add(category);
         }
-
+        // Проверка на минимальное количество ответов для категории "История"
+        if (categories.stream().anyMatch(category -> category.getName().equals("История"))
+                && answers.size() < 2) {
+            throw new IllegalArgumentException("Вопросы по категории История должны обязательно содержать минимум 2 ответа");
+        }
 
         List<Answer> answers1 = answers.stream().map(answer -> {
             Answer a = new Answer();
@@ -95,14 +99,9 @@ public class QuestionService {
 
         question.setAnswers(answers1);
 
-
         question.setCategories(categories);
 
-        // Проверка на минимальное количество ответов для категории "История"
-        if (categories.stream().anyMatch(category -> category.getName().equals("История"))
-                && answers1.size() < 2) {
-            throw new IllegalArgumentException("Вопросы по категории История должны обязательно содержать минимум 2 ответа");
-        }
+
 
         System.out.println(question.getId());
         System.out.println(question.getQuestionText());
