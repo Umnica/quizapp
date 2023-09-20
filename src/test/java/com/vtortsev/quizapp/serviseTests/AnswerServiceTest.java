@@ -15,6 +15,7 @@ import java.util.ArrayList;
 import java.util.List;
 
 import static org.junit.jupiter.api.Assertions.*;
+import static org.mockito.ArgumentMatchers.any;
 import static org.mockito.Mockito.when;
 
 @SpringBootTest
@@ -47,21 +48,21 @@ public class AnswerServiceTest {
         // Проверяем, что список ответов соответствует ожидаемому
         assertEquals(expectedAnswers, actualAnswers);
     }
-    @Autowired
-    private AnswerService answerService1;
     @Test
     void testGetAnswerById() {
-
-        CreateAnswerDto answer = new CreateAnswerDto();
-
+        // Создание поддельного ответа
+        Answer answer = new Answer();
+        answer.setId(1);
         answer.setAnswerText("Простой вопрос?");
 
-        Answer savedAnswer = answerService1.createAnswer(answer);
-        Answer retrievedAnswer = answerService1.getAnswerById(savedAnswer.getId());
+        // Замокировать методы DAO
+        when(answerDao.findById(1)).thenReturn(java.util.Optional.of(answer));
+
+        Answer retrievedAnswer = answerService.getAnswerById(1);
 
         assertNotNull(retrievedAnswer);
-        assertEquals(savedAnswer.getId(), retrievedAnswer.getId());
-        assertEquals("Простой вопрос?", retrievedAnswer.getAnswerText());
+        assertEquals(answer.getId(), retrievedAnswer.getId());
+        assertEquals(answer.getAnswerText(), retrievedAnswer.getAnswerText());
     }
 
     @Test
@@ -69,8 +70,18 @@ public class AnswerServiceTest {
         CreateAnswerDto createAnswerDto = new CreateAnswerDto();
         createAnswerDto.setAnswerText("Valid answer text");
 
-        Answer validAnswer = answerService1.createAnswer(createAnswerDto);
+        // Замокировать методы DAO
+        when(answerDao.save(any(Answer.class))).thenAnswer(invocation -> {
+            Answer answer = invocation.getArgument(0);
+            answer.setId(1); // Присваиваем идентификатор, как если бы было сохранение в базу
+            return answer;
+        });
+
+        Answer validAnswer = answerService.createAnswer(createAnswerDto);
+
         assertNotNull(validAnswer);
+        assertEquals("Valid answer text", validAnswer.getAnswerText());
+        assertNotNull(validAnswer.getId()); // Удостоверимся, что у объекта есть идентификатор
     }
 
 
