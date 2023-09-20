@@ -30,6 +30,12 @@ public class QuestionServiceTest {
     @InjectMocks
     private QuestionService questionService;
 
+    @Autowired
+    private AnswerService answerService;
+    @Autowired
+    private CategoryService categoryService;
+    @Autowired
+    QuestionService questionService1;
     @Test
     void testGetQuestionById() {
         Question question = new Question();
@@ -44,11 +50,6 @@ public class QuestionServiceTest {
 
         Assertions.assertEquals(question, actualQuestion);
     }
-
-    @Autowired
-    private AnswerService answerService;
-    @Autowired
-    private CategoryService categoryService;
 
     @Test
     void testGetAllQuestion() {
@@ -78,8 +79,7 @@ public class QuestionServiceTest {
 
         assertEquals(questions, actualQuestions);
     }
-    @Autowired
-    QuestionService questionService1;
+
     @Test
     void testCreateQuestionDtoWithUseIdsAnswerAndCategory() {
         // Создание данных
