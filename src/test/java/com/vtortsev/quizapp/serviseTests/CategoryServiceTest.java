@@ -70,7 +70,7 @@ public class CategoryServiceTest {
         when(categoryDao.save(any(Category.class))).thenAnswer(invocation -> {
             Category savedCategory = invocation.getArgument(0);  // Получить аргумент, переданный методу сохранения
             savedCategory.setId(1);  // Устанавлеваем id образца для сохраненной категории
-            return savedCategory;
+            return savedCategory;//
         });
         Category actualCategory = categoryService.createCategory(dto);
 
