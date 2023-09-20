@@ -1278,3 +1278,22 @@ Error starting ApplicationContext. To display the condition evaluation report re
 2023-09-20T20:54:08.375+04:00  INFO 4324 --- [SpringApplicationShutdownHook] j.LocalContainerEntityManagerFactoryBean : Closing JPA EntityManagerFactory for persistence unit 'default'
 2023-09-20T20:54:08.377+04:00  INFO 4324 --- [SpringApplicationShutdownHook] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Shutdown initiated...
 2023-09-20T20:54:08.384+04:00  INFO 4324 --- [SpringApplicationShutdownHook] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Shutdown completed.
+2023-09-20T22:18:35.855+04:00  INFO 5328 --- [main] c.v.q.serviseTests.QuestionServiceTest   : Starting QuestionServiceTest using Java 20.0.2 with PID 5328 (started by Кирилл in C:\Users\Кирилл\Desktop\quizapp)
+2023-09-20T22:18:35.857+04:00  INFO 5328 --- [main] c.v.q.serviseTests.QuestionServiceTest   : No active profile set, falling back to 1 default profile: "default"
+2023-09-20T22:18:36.536+04:00  INFO 5328 --- [main] .s.d.r.c.RepositoryConfigurationDelegate : Bootstrapping Spring Data JPA repositories in DEFAULT mode.
+2023-09-20T22:18:36.621+04:00  INFO 5328 --- [main] .s.d.r.c.RepositoryConfigurationDelegate : Finished Spring Data repository scanning in 74 ms. Found 3 JPA repository interfaces.
+2023-09-20T22:18:37.040+04:00  INFO 5328 --- [main] o.hibernate.jpa.internal.util.LogHelper  : HHH000204: Processing PersistenceUnitInfo [name: default]
+2023-09-20T22:18:37.088+04:00  INFO 5328 --- [main] org.hibernate.Version                    : HHH000412: Hibernate ORM core version 6.2.7.Final
+2023-09-20T22:18:37.090+04:00  INFO 5328 --- [main] org.hibernate.cfg.Environment            : HHH000406: Using bytecode reflection optimizer
+2023-09-20T22:18:37.263+04:00  INFO 5328 --- [main] o.h.b.i.BytecodeProviderInitiator        : HHH000021: Bytecode provider name : bytebuddy
+2023-09-20T22:18:37.468+04:00  INFO 5328 --- [main] o.s.o.j.p.SpringPersistenceUnitInfo      : No LoadTimeWeaver setup: ignoring JPA class transformer
+2023-09-20T22:18:37.494+04:00  INFO 5328 --- [main] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Starting...
+2023-09-20T22:18:37.718+04:00  INFO 5328 --- [main] com.zaxxer.hikari.pool.HikariPool        : HikariPool-1 - Added connection org.postgresql.jdbc.PgConnection@4e958f08
+2023-09-20T22:18:37.720+04:00  INFO 5328 --- [main] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Start completed.
+2023-09-20T22:18:37.994+04:00  INFO 5328 --- [main] o.h.b.i.BytecodeProviderInitiator        : HHH000021: Bytecode provider name : bytebuddy
+2023-09-20T22:18:38.602+04:00  INFO 5328 --- [main] o.h.e.t.j.p.i.JtaPlatformInitiator       : HHH000490: Using JtaPlatform implementation: [org.hibernate.engine.transaction.jta.platform.internal.NoJtaPlatform]
+2023-09-20T22:18:38.684+04:00  INFO 5328 --- [main] j.LocalContainerEntityManagerFactoryBean : Initialized JPA EntityManagerFactory for persistence unit 'default'
+2023-09-20T22:18:39.550+04:00  INFO 5328 --- [main] c.v.q.serviseTests.QuestionServiceTest   : Started QuestionServiceTest in 4.006 seconds (process running for 5.313)
+2023-09-20T22:18:40.562+04:00  INFO 5328 --- [SpringApplicationShutdownHook] j.LocalContainerEntityManagerFactoryBean : Closing JPA EntityManagerFactory for persistence unit 'default'
+2023-09-20T22:18:40.565+04:00  INFO 5328 --- [SpringApplicationShutdownHook] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Shutdown initiated...
+2023-09-20T22:18:40.569+04:00  INFO 5328 --- [SpringApplicationShutdownHook] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Shutdown completed.
