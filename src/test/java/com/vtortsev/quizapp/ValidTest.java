@@ -20,10 +20,23 @@ public class ValidTest {
     @Test
     void testInvalidTextWithSpecialCharacters() {
         assertFalse(Valid.isValidText("Invalid answer text @#!"));
-        assertFalse(Valid.isValidText("Invalid answer-- text!"));
+    }
+    @Test
+    void  testInvalidTextWithTwoOrMorePunctuationMarksInRow(){
+        assertFalse(Valid.isValidText("Invalid answ,,er text"));
         assertFalse(Valid.isValidText("Invalid answ,,,er text"));
+    }
+
+    @Test
+    void testInvalidTextWithTwoHyphensInRow() {
+        assertFalse(Valid.isValidText("Invalid answer-- text!"));
+    }
+
+    @Test
+    void testInvalidTextIsEmpty() {
         assertFalse(Valid.isValidText(""));
     }
+
     @InjectMocks
     private AnswerService answerService;
     @Test // тест на выброс исключения при неправильным входным параметром
