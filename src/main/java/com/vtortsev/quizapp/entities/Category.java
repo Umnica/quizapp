@@ -1,6 +1,5 @@
 package com.vtortsev.quizapp.entities;
 
-import com.fasterxml.jackson.annotation.JsonIgnoreProperties;
 import jakarta.persistence.*;
 import lombok.Data;
 
