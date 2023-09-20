@@ -1,8 +1,10 @@
 package com.vtortsev.quizapp.serviseTests;
 
 import com.vtortsev.quizapp.dao.CategoryDao;
+import com.vtortsev.quizapp.dto.createEntityDto.CreateAnswerDto;
 import com.vtortsev.quizapp.dto.createEntityDto.CreateCategoryDto;
 import com.vtortsev.quizapp.entities.Category;
+import com.vtortsev.quizapp.service.AnswerService;
 import com.vtortsev.quizapp.service.CategoryService;
 import org.junit.jupiter.api.Test;
 import org.mockito.InjectMocks;
@@ -13,8 +15,8 @@ import java.util.ArrayList;
 import java.util.List;
 import java.util.Optional;
 
-import static org.junit.jupiter.api.Assertions.assertEquals;
-import static org.junit.jupiter.api.Assertions.assertNotNull;
+import static org.junit.jupiter.api.Assertions.*;
+import static org.junit.jupiter.api.Assertions.assertThrows;
 import static org.mockito.ArgumentMatchers.any;
 import static org.mockito.Mockito.when;
 
@@ -24,6 +26,8 @@ public class CategoryServiceTest {
     private CategoryDao categoryDao;
     @InjectMocks
     private CategoryService categoryService;
+    @InjectMocks
+    private AnswerService answerService;
 
     @Test
     void testGetCategoryById() {
@@ -76,6 +80,23 @@ public class CategoryServiceTest {
 
         assertNotNull(actualCategory.getId());
         assertEquals(category.getName(), actualCategory.getName());
+    }
+
+    @Test // тест на выброс исключения при неправильным входным параметром
+    void testInvalidAnswerCreation() {
+        CreateAnswerDto createAnswerDto = new CreateAnswerDto();
+        createAnswerDto.setAnswerText("Invalid answer @#!");
+        assertThrows(IllegalArgumentException.class, () -> answerService.createAnswer(createAnswerDto));
+    }
+
+    @Test
+    void testInvalidCategoryCreation() {
+        // Устанавливаем имя категории меньше 2 символов
+        CreateCategoryDto createCategoryDto = new CreateCategoryDto();
+        createCategoryDto.setName("A");
+
+        // Проверяем, что IllegalArgumentException вызывается при именах менее 2 символов
+        assertThrows(IllegalArgumentException.class, () -> categoryService.createCategory(createCategoryDto));
     }
 
 
