@@ -60,7 +60,7 @@ public class QuestionServiceTest {
         q1.setQuestionText("Вопросы?");
         q1.setLevel("80 level");
 
-        Set<Category> cList = new HashSet<>();
+        List<Category> cList = new ArrayList<>();
         Category c = new Category();
         c.setName("Category");
         cList.add(c);
@@ -78,6 +78,8 @@ public class QuestionServiceTest {
 
         assertEquals(questions, actualQuestions);
     }
+    @Autowired
+    QuestionService questionService1;
     @Test
     void testCreateQuestionDtoWithUseIdsAnswerAndCategory() {
         // Создание данных
@@ -107,7 +109,7 @@ public class QuestionServiceTest {
         dto.setAnswers(answerIds);
         dto.setCategories(categoryIds);
 
-        Question createdQuestion = questionService.createQuestionDtoWithUseIdsAnswerAndCategory(dto);
+        Question createdQuestion = questionService1.createQuestionDtoWithUseIdsAnswerAndCategory(dto);
 
 
         assertNotNull(createdQuestion.getId());
@@ -120,11 +122,8 @@ public class QuestionServiceTest {
         dto.setLevel("Test level");
         dto.setQuestionText("Invalid question text with special characters @#$");
         assertThrows(IllegalArgumentException.class, () -> {
-            questionService.createQuestionDtoWithUseIdsAnswerAndCategory(dto);
+            questionService1.createQuestionDtoWithUseIdsAnswerAndCategory(dto);
         });
     }
-
-
-
 
 }

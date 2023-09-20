@@ -1,6 +1,5 @@
 package com.vtortsev.quizapp.entities;
 
-import com.fasterxml.jackson.annotation.JsonIgnoreProperties;
 import jakarta.persistence.*;
 import lombok.Data;
 
@@ -24,7 +23,7 @@ public class Question {
             joinColumns = @JoinColumn(name = "question_id"),
             inverseJoinColumns = @JoinColumn(name = "category_id")
     )
-    private Set<Category> categories = new HashSet<>();
+    private List<Category> categories = new ArrayList<>();
 
     @OneToMany(mappedBy = "question", fetch = FetchType.EAGER) // Один вопрос имеет много ответов
     private List<Answer> answers = new ArrayList<>();

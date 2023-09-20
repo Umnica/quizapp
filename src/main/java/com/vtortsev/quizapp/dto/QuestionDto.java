@@ -7,4 +7,6 @@ public class QuestionDto {
     private Integer id;
     private String level;
     private String questionText;
+
+
 }

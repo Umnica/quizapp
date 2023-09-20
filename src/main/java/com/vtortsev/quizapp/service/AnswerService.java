@@ -36,4 +36,13 @@ public class AnswerService {
         answer.setAnswerText(createAnswerDto.getAnswerText());
         return answerDao.save(answer);
     }
+    public Answer createAnswer(Answer createAnswerDto) {
+        if (!Valid.isValidText(createAnswerDto.getAnswerText()))
+            throw new IllegalArgumentException("Invalid answer text");
+
+        Answer answer = new Answer();
+        answer.setAnswerText(createAnswerDto.getAnswerText());
+        answer.setQuestion(createAnswerDto.getQuestion());
+        return answerDao.save(answer);
+    }
 }

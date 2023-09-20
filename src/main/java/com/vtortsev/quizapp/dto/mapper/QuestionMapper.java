@@ -13,10 +13,12 @@ public interface QuestionMapper {
     @Mapping(source = "questionText", target = "questionText")
     QuestionDto toDto(Question question);
 
+
     @Mapping(source = "id", target = "id")
     @Mapping(source = "level", target = "level")
     @Mapping(source = "questionText", target = "questionText")
     @Mapping(source = "answers", target = "answers")
     @Mapping(source = "categories", target = "categories")
     FullQuestionDto toFullDto(Question question);
+
 }

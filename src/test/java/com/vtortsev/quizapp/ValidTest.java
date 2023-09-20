@@ -1,6 +1,5 @@
 package com.vtortsev.quizapp;
 
-import com.vtortsev.quizapp.dao.CategoryDao;
 import com.vtortsev.quizapp.dto.createEntityDto.CreateAnswerDto;
 import com.vtortsev.quizapp.dto.createEntityDto.CreateCategoryDto;
 import com.vtortsev.quizapp.service.AnswerService;
@@ -8,7 +7,6 @@ import com.vtortsev.quizapp.service.CategoryService;
 import com.vtortsev.quizapp.service.Valid;
 import org.junit.jupiter.api.Test;
 import org.mockito.InjectMocks;
-import org.mockito.Mock;
 import org.springframework.boot.test.context.SpringBootTest;
 
 import static org.junit.jupiter.api.Assertions.*;

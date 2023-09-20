@@ -9,5 +9,6 @@ import org.mapstruct.Mapping;
 public interface AnswerMapper {
     @Mapping(source = "id", target = "id")
     @Mapping(source = "answerText", target = "answerText")
+    @Mapping(source = "question", target = "question")
     AnswerDto toDto(Answer answer);
 }

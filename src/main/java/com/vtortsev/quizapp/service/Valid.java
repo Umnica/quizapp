@@ -9,3 +9,4 @@ public class Valid {
         return name.length() > 1 && isValidText(name);
     }
 }
+
