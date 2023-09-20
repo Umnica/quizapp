@@ -1,44 +1,21 @@
-package com.vtortsev.quizapp;
+package com.vtortsev.quizapp.validTests;
 
 import com.vtortsev.quizapp.dto.createEntityDto.CreateAnswerDto;
 import com.vtortsev.quizapp.dto.createEntityDto.CreateCategoryDto;
 import com.vtortsev.quizapp.service.AnswerService;
 import com.vtortsev.quizapp.service.CategoryService;
-import com.vtortsev.quizapp.service.Valid;
 import org.junit.jupiter.api.Test;
 import org.mockito.InjectMocks;
 import org.springframework.boot.test.context.SpringBootTest;
 
-import static org.junit.jupiter.api.Assertions.*;
+import static org.junit.jupiter.api.Assertions.assertThrows;
 
 @SpringBootTest
-public class ValidTest {
-    @Test
-    void testValidText() {
-        assertTrue(Valid.isValidText("Valid, answer-1 text?"));
-    }
-    @Test
-    void testInvalidTextWithSpecialCharacters() {
-        assertFalse(Valid.isValidText("Invalid answer text @#!"));
-    }
-    @Test
-    void  testInvalidTextWithTwoOrMorePunctuationMarksInRow(){
-        assertFalse(Valid.isValidText("Invalid answ,,er text"));
-        assertFalse(Valid.isValidText("Invalid answ,,,er text"));
-    }
-
-    @Test
-    void testInvalidTextWithTwoHyphensInRow() {
-        assertFalse(Valid.isValidText("Invalid answer-- text!"));
-    }
-
-    @Test
-    void testInvalidTextIsEmpty() {
-        assertFalse(Valid.isValidText(""));
-    }
-
+public class EntitiesValidTest {
     @InjectMocks
     private AnswerService answerService;
+    @InjectMocks
+    private CategoryService categoryService;
     @Test // тест на выброс исключения при неправильным входным параметром
     void testInvalidAnswerCreation() {
         CreateAnswerDto createAnswerDto = new CreateAnswerDto();
@@ -46,11 +23,6 @@ public class ValidTest {
 
         assertThrows(IllegalArgumentException.class, () -> answerService.createAnswer(createAnswerDto));
     }
-
-
-
-    @InjectMocks
-    private CategoryService categoryService;
 
     @Test
     void testInvalidCategoryCreation() {
@@ -61,6 +33,4 @@ public class ValidTest {
         // Проверяем, что IllegalArgumentException вызывается при именах менее 2 символов
         assertThrows(IllegalArgumentException.class, () -> categoryService.createCategory(createCategoryDto));
     }
-
-
 }

@@ -1221,8 +1221,8 @@ Error starting ApplicationContext. To display the condition evaluation report re
 2023-09-20T19:54:59.614+04:00  INFO 14692 --- [SpringApplicationShutdownHook] j.LocalContainerEntityManagerFactoryBean : Closing JPA EntityManagerFactory for persistence unit 'default'
 2023-09-20T19:54:59.616+04:00  INFO 14692 --- [SpringApplicationShutdownHook] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Shutdown initiated...
 2023-09-20T19:54:59.620+04:00  INFO 14692 --- [SpringApplicationShutdownHook] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Shutdown completed.
-2023-09-20T20:43:38.250+04:00  INFO 2528 --- [main] com.vtortsev.quizapp.ValidTest           : Starting ValidTest using Java 20.0.2 with PID 2528 (started by Кирилл in C:\Users\Кирилл\Desktop\quizapp)
-2023-09-20T20:43:38.251+04:00  INFO 2528 --- [main] com.vtortsev.quizapp.ValidTest           : No active profile set, falling back to 1 default profile: "default"
+2023-09-20T20:43:38.250+04:00  INFO 2528 --- [main] com.vtortsev.quizapp.validTests.ValidTest           : Starting ValidTest using Java 20.0.2 with PID 2528 (started by Кирилл in C:\Users\Кирилл\Desktop\quizapp)
+2023-09-20T20:43:38.251+04:00  INFO 2528 --- [main] com.vtortsev.quizapp.validTests.ValidTest           : No active profile set, falling back to 1 default profile: "default"
 2023-09-20T20:43:39.037+04:00  INFO 2528 --- [main] .s.d.r.c.RepositoryConfigurationDelegate : Bootstrapping Spring Data JPA repositories in DEFAULT mode.
 2023-09-20T20:43:39.142+04:00  INFO 2528 --- [main] .s.d.r.c.RepositoryConfigurationDelegate : Finished Spring Data repository scanning in 83 ms. Found 3 JPA repository interfaces.
 2023-09-20T20:43:39.612+04:00  INFO 2528 --- [main] o.hibernate.jpa.internal.util.LogHelper  : HHH000204: Processing PersistenceUnitInfo [name: default]
@@ -1236,7 +1236,7 @@ Error starting ApplicationContext. To display the condition evaluation report re
 2023-09-20T20:43:40.633+04:00  INFO 2528 --- [main] o.h.b.i.BytecodeProviderInitiator        : HHH000021: Bytecode provider name : bytebuddy
 2023-09-20T20:43:41.254+04:00  INFO 2528 --- [main] o.h.e.t.j.p.i.JtaPlatformInitiator       : HHH000490: Using JtaPlatform implementation: [org.hibernate.engine.transaction.jta.platform.internal.NoJtaPlatform]
 2023-09-20T20:43:41.368+04:00  INFO 2528 --- [main] j.LocalContainerEntityManagerFactoryBean : Initialized JPA EntityManagerFactory for persistence unit 'default'
-2023-09-20T20:43:42.213+04:00  INFO 2528 --- [main] com.vtortsev.quizapp.ValidTest           : Started ValidTest in 4.264 seconds (process running for 5.538)
+2023-09-20T20:43:42.213+04:00  INFO 2528 --- [main] com.vtortsev.quizapp.validTests.ValidTest           : Started ValidTest in 4.264 seconds (process running for 5.538)
 2023-09-20T20:43:42.777+04:00  INFO 2528 --- [SpringApplicationShutdownHook] j.LocalContainerEntityManagerFactoryBean : Closing JPA EntityManagerFactory for persistence unit 'default'
 2023-09-20T20:43:42.779+04:00  INFO 2528 --- [SpringApplicationShutdownHook] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Shutdown initiated...
 2023-09-20T20:43:42.782+04:00  INFO 2528 --- [SpringApplicationShutdownHook] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Shutdown completed.
