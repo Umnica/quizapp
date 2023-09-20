@@ -15,6 +15,7 @@ import org.springframework.stereotype.Service;
 import java.util.ArrayList;
 import java.util.HashSet;
 import java.util.List;
+import java.util.Optional;
 import java.util.stream.Collectors;
 
 @Service // сервис (какая то логика внутри)
@@ -22,17 +23,13 @@ public class QuestionService {
     private final QuestionDao questionDao; // это объект для работы с бд DataAccessObject
     private final CategoryService categoryService;
     private final AnswerService answerService;
-    private final AnswerDao answerDao;
-    private final CategoryDao categoryDao;
 
-    @Autowired
-    public QuestionService(QuestionDao questionDao, CategoryService categoryService, AnswerService answerService, AnswerDao answerDao,
-                           CategoryDao categoryDao) {
+
+    //@Autowired
+    public QuestionService(QuestionDao questionDao, CategoryService categoryService, AnswerService answerService) {
         this.questionDao = questionDao;
         this.categoryService = categoryService;
         this.answerService = answerService;
-        this.answerDao = answerDao;
-        this.categoryDao = categoryDao;
     }
 
 
@@ -58,12 +55,15 @@ public class QuestionService {
 
     @Transactional
     public Question createQuestionDtoWithUseIdsAnswerAndCategory(CreateQuestionDtoWithUseIdsAnswerAndCategory dto) {
+
         if (!Valid.isValidText(dto.getLevel()))
             throw new IllegalArgumentException("Invalid question level");
         if (!Valid.isValidText(dto.getQuestionText()))
             throw new IllegalArgumentException("Invalid question questionText");
 
         Question question = new Question();
+        if (dto.getId() != null)
+            question.setId(dto.getId());
         question.setQuestionText(dto.getQuestionText());
         question.setLevel(dto.getLevel());
 
@@ -105,20 +105,6 @@ public class QuestionService {
         question.setAnswers(answers1);
 
         question.setCategories(categories);
-
-
-        /*
-        System.out.println(question.getId());
-        System.out.println(question.getQuestionText());
-        System.out.println(question.getAnswers().stream().map(answer -> {
-            Question q = answer.getQuestion();
-            return  q.getId();
-        }).collect(Collectors.toList()));
-        */
-        //System.out.println(question.getCategories().stream().map(Category::getId).collect(Collectors.toList()));
-        // +  +  + question.getCategories());
-
-
 
         return questionDao.save(question);
     }

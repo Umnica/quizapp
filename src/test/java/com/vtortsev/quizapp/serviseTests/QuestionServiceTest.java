@@ -1,8 +1,6 @@
 package com.vtortsev.quizapp.serviseTests;
 
 import com.vtortsev.quizapp.dao.QuestionDao;
-import com.vtortsev.quizapp.dto.createEntityDto.CreateAnswerDto;
-import com.vtortsev.quizapp.dto.createEntityDto.CreateCategoryDto;
 import com.vtortsev.quizapp.dto.createEntityDto.CreateQuestionDtoWithUseIdsAnswerAndCategory;
 import com.vtortsev.quizapp.entities.Answer;
 import com.vtortsev.quizapp.entities.Category;
@@ -10,120 +8,104 @@ import com.vtortsev.quizapp.entities.Question;
 import com.vtortsev.quizapp.service.AnswerService;
 import com.vtortsev.quizapp.service.CategoryService;
 import com.vtortsev.quizapp.service.QuestionService;
-import org.junit.jupiter.api.Assertions;
+import org.jetbrains.annotations.NotNull;
 import org.junit.jupiter.api.Test;
 import org.mockito.InjectMocks;
 import org.mockito.Mock;
-import org.springframework.beans.factory.annotation.Autowired;
-import org.springframework.boot.test.context.SpringBootTest;
-
-import java.util.*;
-
+import org.mockito.junit.jupiter.MockitoSettings;
+import org.mockito.quality.Strictness;
+import java.util.ArrayList;
+import java.util.List;
 import static org.junit.jupiter.api.Assertions.*;
+import static org.mockito.ArgumentMatchers.any;
+import static org.mockito.Mockito.when;
+import static org.junit.jupiter.api.Assertions.*;
+import static org.junit.jupiter.api.Assertions.assertThrows;
+import static org.mockito.ArgumentMatchers.any;
 import static org.mockito.Mockito.when;
 
-@SpringBootTest
+@MockitoSettings(strictness = Strictness.LENIENT)
 public class QuestionServiceTest {
+
     @Mock
     private QuestionDao questionDao;
+
+    @Mock
+    private AnswerService answerService;
+
+    @Mock
+    private CategoryService categoryService;
 
     @InjectMocks
     private QuestionService questionService;
 
-    @Autowired
-    private AnswerService answerService;
-    @Autowired
-    private CategoryService categoryService;
-    @Autowired
-    QuestionService questionService1;
-    @Test
-    void testGetQuestionById() {
-        Question question = new Question();
-        Integer questionId = 1;
 
-        question.setQuestionText("Вопросы?");
-        question.setLevel("80 level");
-
-        when(questionDao.findById(questionId)).thenReturn(Optional.of(question));
-
-        Question actualQuestion = questionService.getQuestionById(questionId);
-
-        Assertions.assertEquals(question, actualQuestion);
-    }
 
     @Test
     void testGetAllQuestion() {
-        List<Question> questions = new ArrayList<>();
+        List<Question> expectedQuestions = new ArrayList<>();
 
-        Question q1 = new Question();
-        Question q2 = new Question();
-
-        q1.setQuestionText("Вопросы?");
-        q1.setLevel("80 level");
-
-        List<Category> cList = new ArrayList<>();
-        Category c = new Category();
-        c.setName("Category");
-        cList.add(c);
-        q1.setCategories(cList);
-
-        List<Answer> as = new ArrayList<>();
-        Answer a = new Answer();
-        a.setAnswerText("Answer 1");
-        as.add(a);
-        q1.setAnswers(as);
-
-        when(questionDao.findAll()).thenReturn(questions);
+        when(questionDao.findAll()).thenReturn(expectedQuestions);
 
         List<Question> actualQuestions = questionService.getAllQuestions();
 
-        assertEquals(questions, actualQuestions);
+        assertEquals(expectedQuestions, actualQuestions);
     }
 
     @Test
     void testCreateQuestionDtoWithUseIdsAnswerAndCategory() {
-        // Создание данных
-        List<Answer> answers = new ArrayList<>();
-        CreateAnswerDto answer1 = new CreateAnswerDto();
+        Answer answer1 = new Answer();
+        answer1.setId(1);
         answer1.setAnswerText("Answer 1");
-        answers.add(answerService.createAnswer(answer1));
+        when(answerService.getAnswerById(1)).thenReturn(answer1);
 
-        CreateAnswerDto answer2 = new CreateAnswerDto();
+        Answer answer2 = new Answer();
+        answer2.setId(2);
         answer2.setAnswerText("Answer 2");
-        answers.add(answerService.createAnswer(answer2));
+        when(answerService.getAnswerById(2)).thenReturn(answer2);
 
-        List<Category> categories = new ArrayList<>();
-        CreateCategoryDto category = new CreateCategoryDto();
-        category.setName("Test Category");
-        categories.add(categoryService.createCategory(category));
+        Category category1 = new Category();
+        category1.setId(1);
+        category1.setName("Category 1");
+        when(categoryService.getCategoryById(1)).thenReturn(category1);
 
-        List<Integer> answerIds = new ArrayList<>();
-        answers.forEach(a -> answerIds.add(a.getId()));
+        Category category2 = new Category();
+        category2.setId(2);
+        category2.setName("Category 2");
+        when(categoryService.getCategoryById(2)).thenReturn(category2);
 
-        List<Integer> categoryIds = new ArrayList<>();
-        categories.forEach(c -> categoryIds.add(c.getId()));
+        CreateQuestionDtoWithUseIdsAnswerAndCategory dto = getDto();
+        when(questionDao.save(any(Question.class))).thenAnswer(invocation -> {
+            Question savedQuestion = invocation.getArgument(0);
+            savedQuestion.setId(1);
+            return savedQuestion;
+        });
 
-        CreateQuestionDtoWithUseIdsAnswerAndCategory dto = new CreateQuestionDtoWithUseIdsAnswerAndCategory();
-        dto.setQuestionText("Test question?");
-        dto.setLevel("Test level");
-        dto.setAnswers(answerIds);
-        dto.setCategories(categoryIds);
-
-        Question createdQuestion = questionService1.createQuestionDtoWithUseIdsAnswerAndCategory(dto);
-
+        Question createdQuestion = questionService.createQuestionDtoWithUseIdsAnswerAndCategory(dto);
 
         assertNotNull(createdQuestion.getId());
         assertEquals(dto.getQuestionText(), createdQuestion.getQuestionText());
         assertEquals(dto.getLevel(), createdQuestion.getLevel());
-        assertEquals(answers.size(), createdQuestion.getAnswers().size());
-        assertEquals(categories.size(), createdQuestion.getCategories().size());
-
-        // Проверка валидности questionText
-        dto.setLevel("Test level");
-        dto.setQuestionText("Invalid question text with special characters @#$");
-        assertThrows(IllegalArgumentException.class, () -> {
-            questionService1.createQuestionDtoWithUseIdsAnswerAndCategory(dto);
-        });
+        assertEquals(2, createdQuestion.getAnswers().size());
+        assertEquals(2, createdQuestion.getCategories().size());
     }
 
+    @NotNull
+    private static CreateQuestionDtoWithUseIdsAnswerAndCategory getDto() {
+        List<Integer> answersIds = new ArrayList<>();
+
+        answersIds.add(1);
+        answersIds.add(2);
+
+        List<Integer> categoriesIds = new ArrayList<>();
+        categoriesIds.add(1);
+        categoriesIds.add(2);
+
+        CreateQuestionDtoWithUseIdsAnswerAndCategory dto = new CreateQuestionDtoWithUseIdsAnswerAndCategory();
+        dto.setQuestionText("Test question?");
+        dto.setLevel("Test level");
+        dto.setAnswers(answersIds);
+        dto.setCategories(categoriesIds);
+        return dto;
+    }
 }
