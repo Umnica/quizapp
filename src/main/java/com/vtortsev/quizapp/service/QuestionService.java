@@ -67,6 +67,10 @@ public class QuestionService {
         question.setQuestionText(dto.getQuestionText());
         question.setLevel(dto.getLevel());
 
+        if (dto.getAnswers().isEmpty())
+            throw new IllegalArgumentException("Id ответов не могут быть пустыми");
+        if (dto.getCategories().isEmpty())
+            throw new IllegalArgumentException("Id категорий не могут быть пустыми");
         // Получаем ответы по их id
         List<Answer> answers = new ArrayList<>();
         for (Integer id : dto.getAnswers()) {
@@ -83,6 +87,7 @@ public class QuestionService {
                 throw new IllegalArgumentException("В базе данных не существует категории с id: " + id);
             categories.add(category);
         }
+
         // Проверка на минимальное количество ответов для категории "История"
         if (categories.stream().anyMatch(category -> category.getName().equals("История"))
                 && answers.size() < 2) {
@@ -102,14 +107,14 @@ public class QuestionService {
         question.setCategories(categories);
 
 
-
+        /*
         System.out.println(question.getId());
         System.out.println(question.getQuestionText());
         System.out.println(question.getAnswers().stream().map(answer -> {
             Question q = answer.getQuestion();
             return  q.getId();
         }).collect(Collectors.toList()));
-
+        */
         //System.out.println(question.getCategories().stream().map(Category::getId).collect(Collectors.toList()));
         // +  +  + question.getCategories());
 
