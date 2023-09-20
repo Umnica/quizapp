@@ -3,10 +3,7 @@ package com.vtortsev.quizapp.entities;
 import jakarta.persistence.*;
 import lombok.Data;
 
-import java.util.ArrayList;
-import java.util.HashSet;
-import java.util.List;
-import java.util.Set;
+import java.util.*;
 
 @Entity(name = "t_questions")
 @Data
@@ -27,5 +24,4 @@ public class Question {
 
     @OneToMany(mappedBy = "question", fetch = FetchType.EAGER) // Один вопрос имеет много ответов
     private List<Answer> answers = new ArrayList<>();
-
 }
