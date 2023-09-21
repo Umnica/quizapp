@@ -1,4 +1,4 @@
-package com.vtortsev.quizapp.controller.registration;
+package com.vtortsev.quizapp.registration;
 
 import lombok.AllArgsConstructor;
 import org.springframework.web.bind.annotation.RequestBody;
@@ -9,7 +9,8 @@ import org.springframework.web.bind.annotation.RestController;
 @RequestMapping(path = "/api/v1/registration")
 @AllArgsConstructor
 public class RegistrationController {
+    private RegistrationService registrationService;
     public String register(@RequestBody RegistrationRequest request) {
-        return registrationRequest.register(request);
+        return registrationService.register(request);
     }
 }
