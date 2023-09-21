@@ -1735,3 +1735,29 @@ Error starting ApplicationContext. To display the condition evaluation report re
 2023-09-20T23:28:48.870+04:00  INFO 2064 --- [SpringApplicationShutdownHook] j.LocalContainerEntityManagerFactoryBean : Closing JPA EntityManagerFactory for persistence unit 'default'
 2023-09-20T23:28:48.872+04:00  INFO 2064 --- [SpringApplicationShutdownHook] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Shutdown initiated...
 2023-09-20T23:28:48.880+04:00  INFO 2064 --- [SpringApplicationShutdownHook] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Shutdown completed.
+2023-09-21T22:55:48.491+04:00  INFO 5224 --- [main] c.vtortsev.quizapp.QuizappApplication    : Starting QuizappApplication using Java 20.0.2 with PID 5224 (C:\Users\Кирилл\Desktop\quizapp\target\classes started by Кирилл in C:\Users\Кирилл\Desktop\quizapp)
+2023-09-21T22:55:48.493+04:00  INFO 5224 --- [main] c.vtortsev.quizapp.QuizappApplication    : No active profile set, falling back to 1 default profile: "default"
+2023-09-21T22:55:49.211+04:00  INFO 5224 --- [main] .s.d.r.c.RepositoryConfigurationDelegate : Bootstrapping Spring Data JPA repositories in DEFAULT mode.
+2023-09-21T22:55:49.291+04:00  INFO 5224 --- [main] .s.d.r.c.RepositoryConfigurationDelegate : Finished Spring Data repository scanning in 71 ms. Found 4 JPA repository interfaces.
+2023-09-21T22:55:49.960+04:00  INFO 5224 --- [main] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat initialized with port(s): 9090 (http)
+2023-09-21T22:55:49.971+04:00  INFO 5224 --- [main] o.apache.catalina.core.StandardService   : Starting service [Tomcat]
+2023-09-21T22:55:49.971+04:00  INFO 5224 --- [main] o.apache.catalina.core.StandardEngine    : Starting Servlet engine: [Apache Tomcat/10.1.12]
+2023-09-21T22:55:50.084+04:00  INFO 5224 --- [main] o.a.c.c.C.[Tomcat].[localhost].[/]       : Initializing Spring embedded WebApplicationContext
+2023-09-21T22:55:50.084+04:00  INFO 5224 --- [main] w.s.c.ServletWebServerApplicationContext : Root WebApplicationContext: initialization completed in 1529 ms
+2023-09-21T22:55:50.258+04:00  INFO 5224 --- [main] o.hibernate.jpa.internal.util.LogHelper  : HHH000204: Processing PersistenceUnitInfo [name: default]
+2023-09-21T22:55:50.331+04:00  INFO 5224 --- [main] org.hibernate.Version                    : HHH000412: Hibernate ORM core version 6.2.7.Final
+2023-09-21T22:55:50.333+04:00  INFO 5224 --- [main] org.hibernate.cfg.Environment            : HHH000406: Using bytecode reflection optimizer
+2023-09-21T22:55:50.483+04:00  INFO 5224 --- [main] o.h.b.i.BytecodeProviderInitiator        : HHH000021: Bytecode provider name : bytebuddy
+2023-09-21T22:55:50.618+04:00  INFO 5224 --- [main] o.s.o.j.p.SpringPersistenceUnitInfo      : No LoadTimeWeaver setup: ignoring JPA class transformer
+2023-09-21T22:55:50.633+04:00  INFO 5224 --- [main] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Starting...
+2023-09-21T22:55:50.825+04:00  INFO 5224 --- [main] com.zaxxer.hikari.pool.HikariPool        : HikariPool-1 - Added connection org.postgresql.jdbc.PgConnection@1796b2d4
+2023-09-21T22:55:50.828+04:00  INFO 5224 --- [main] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Start completed.
+2023-09-21T22:55:51.157+04:00  INFO 5224 --- [main] o.h.b.i.BytecodeProviderInitiator        : HHH000021: Bytecode provider name : bytebuddy
+2023-09-21T22:55:51.809+04:00  INFO 5224 --- [main] o.h.e.t.j.p.i.JtaPlatformInitiator       : HHH000490: Using JtaPlatform implementation: [org.hibernate.engine.transaction.jta.platform.internal.NoJtaPlatform]
+2023-09-21T22:55:51.917+04:00  INFO 5224 --- [main] j.LocalContainerEntityManagerFactoryBean : Initialized JPA EntityManagerFactory for persistence unit 'default'
+2023-09-21T22:55:52.769+04:00  INFO 5224 --- [main] o.s.s.web.DefaultSecurityFilterChain     : Will secure any request with [org.springframework.security.web.session.DisableEncodeUrlFilter@9771c71, org.springframework.security.web.context.request.async.WebAsyncManagerIntegrationFilter@63c66980, org.springframework.security.web.context.SecurityContextHolderFilter@7343d843, org.springframework.security.web.header.HeaderWriterFilter@309d54ac, org.springframework.security.web.csrf.CsrfFilter@27e656e6, org.springframework.security.web.authentication.logout.LogoutFilter@2c257c0a, org.springframework.security.web.authentication.UsernamePasswordAuthenticationFilter@530a46f4, org.springframework.security.web.authentication.ui.DefaultLoginPageGeneratingFilter@7e24a2e2, org.springframework.security.web.authentication.ui.DefaultLogoutPageGeneratingFilter@8cce9ad, org.springframework.security.web.authentication.www.BasicAuthenticationFilter@6ba02f70, org.springframework.security.web.savedrequest.RequestCacheAwareFilter@619b7436, org.springframework.security.web.servletapi.SecurityContextHolderAwareRequestFilter@1acfc058, org.springframework.security.web.authentication.AnonymousAuthenticationFilter@6dc5e857, org.springframework.security.web.access.ExceptionTranslationFilter@7f7f544a, org.springframework.security.web.access.intercept.AuthorizationFilter@350d9d23]
+2023-09-21T22:55:52.833+04:00  INFO 5224 --- [main] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat started on port(s): 9090 (http) with context path ''
+2023-09-21T22:55:52.841+04:00  INFO 5224 --- [main] c.vtortsev.quizapp.QuizappApplication    : Started QuizappApplication in 4.879 seconds (process running for 5.547)
+2023-09-21T22:56:32.496+04:00  INFO 5224 --- [SpringApplicationShutdownHook] j.LocalContainerEntityManagerFactoryBean : Closing JPA EntityManagerFactory for persistence unit 'default'
+2023-09-21T22:56:32.498+04:00  INFO 5224 --- [SpringApplicationShutdownHook] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Shutdown initiated...
+2023-09-21T22:56:32.505+04:00  INFO 5224 --- [SpringApplicationShutdownHook] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Shutdown completed.

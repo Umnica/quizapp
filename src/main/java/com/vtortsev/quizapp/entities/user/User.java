@@ -1,4 +1,4 @@
-package com.vtortsev.quizapp.entities;
+package com.vtortsev.quizapp.entities.user;
 
 import jakarta.persistence.*;
 import lombok.Data;
@@ -15,14 +15,7 @@ import java.util.Collections;
 @Entity(name = "t_users")
 public class User implements UserDetails {
     @Id
-    @GeneratedValue(strategy = GenerationType.SEQUENCE)
-    /*@SequenceGenerator - это аннотация в языке Java, используемая в контексте Java Persistence API (JPA),
-       которая служит для определения настроек генерации значений для первичных ключей сущностей в базе данных.*/
-    @SequenceGenerator(
-            name = "student_sequence",
-            sequenceName = "student_sequence",
-            allocationSize = 1
-    )
+    @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Integer id;
     private String name;
     private String username;
