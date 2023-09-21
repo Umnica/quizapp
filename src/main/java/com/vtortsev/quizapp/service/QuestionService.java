@@ -9,6 +9,7 @@ import com.vtortsev.quizapp.entities.Answer;
 import com.vtortsev.quizapp.entities.Category;
 import com.vtortsev.quizapp.entities.Question;
 import jakarta.transaction.Transactional;
+import lombok.AllArgsConstructor;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
@@ -19,18 +20,11 @@ import java.util.Optional;
 import java.util.stream.Collectors;
 
 @Service // сервис (какая то логика внутри)
+@AllArgsConstructor
 public class QuestionService {
     private final QuestionDao questionDao; // это объект для работы с бд DataAccessObject
     private final CategoryService categoryService;
     private final AnswerService answerService;
-
-
-    //@Autowired
-    public QuestionService(QuestionDao questionDao, CategoryService categoryService, AnswerService answerService) {
-        this.questionDao = questionDao;
-        this.categoryService = categoryService;
-        this.answerService = answerService;
-    }
 
 
     public List<Question> getAllQuestions() {
