@@ -26,7 +26,7 @@ public class WebSecurityConfig {
                         .loginPage("/login")
                         .permitAll()
                 )
-                .logout(LogoutConfigurer::permitAll);
+                .logout((logout) -> logout.permitAll());
 
         return http.build();
     }
@@ -36,7 +36,7 @@ public class WebSecurityConfig {
         UserDetails user =
                 User.withDefaultPasswordEncoder()
                         .username("u")
-                        .password("p")
+                        .password("u")
                         .roles("USER")
                         .build();
 
