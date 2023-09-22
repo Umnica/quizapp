@@ -1,5 +1,7 @@
-package com.vtortsev.quizapp.sequrity.user;
+package com.vtortsev.quizapp.sequrity;
 
+
+import com.vtortsev.quizapp.sequrity.user.User;
 import org.springframework.data.jpa.repository.JpaRepository;
 import org.springframework.stereotype.Repository;
 

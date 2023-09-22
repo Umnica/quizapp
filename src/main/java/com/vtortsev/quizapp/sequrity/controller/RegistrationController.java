@@ -1,25 +1,34 @@
 package com.vtortsev.quizapp.sequrity.controller;
 
+
+import com.vtortsev.quizapp.sequrity.user.User;
+import com.vtortsev.quizapp.sequrity.user.UserDto;
 import com.vtortsev.quizapp.sequrity.user.UserService;
 import lombok.AllArgsConstructor;
+import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.*;
 
-@RestController
+import java.util.List;
+
+@Controller
 @AllArgsConstructor
 @RequestMapping("/registration")
 public class RegistrationController {
-    private UserService userService;
+    private final UserService userService;
 
     @GetMapping
-    public String registrationForm() {
-        return "registration"; // Возвращает страницу с формой регистрации
+    public String showRegistrationForm() {
+        return "registration";
     }
-    /*
+    @GetMapping("/l")
+    public List<User> getAllUsers() {
+        return userService.getAllUsers();
+    }
+
+
     @PostMapping
-    public String registerUser(@ModelAttribute RegistrationForm registrationForm) {
-        // Производите сохранение нового пользователя в базу данных
-        userService.registerUser(registrationForm);
-        return "redirect:/login"; // После успешной регистрации перенаправляйте на страницу входа
+    public String registerUser(@RequestBody UserDto userDto) {
+        userService.save(userDto);
+        return "redirect:/login";
     }
-    */
 }
