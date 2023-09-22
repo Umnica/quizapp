@@ -1,4 +1,4 @@
-package com.vtortsev.quizapp.config;
+package com.vtortsev.quizapp.sequrity.config;
 
 import org.springframework.context.annotation.Configuration;
 import org.springframework.web.servlet.config.annotation.ViewControllerRegistry;
