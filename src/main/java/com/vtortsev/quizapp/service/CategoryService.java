@@ -3,19 +3,17 @@ package com.vtortsev.quizapp.service;
 import com.vtortsev.quizapp.dao.CategoryDao;
 import com.vtortsev.quizapp.dto.createEntityDto.CreateCategoryDto;
 import com.vtortsev.quizapp.entities.Category;
+import lombok.AllArgsConstructor;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
 import java.util.List;
 
 @Service
+@AllArgsConstructor
 public class CategoryService {
     private final CategoryDao categoryDao;
 
-    @Autowired
-    public CategoryService(CategoryDao categoryDao) {
-        this.categoryDao = categoryDao;
-    }
 
     public Category getCategoryById(Integer id) {
         return categoryDao.findById(id).orElse(null);

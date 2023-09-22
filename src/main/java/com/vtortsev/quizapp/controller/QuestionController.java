@@ -6,6 +6,7 @@ import com.vtortsev.quizapp.dto.createEntityDto.CreateQuestionDtoWithUseIdsAnswe
 import com.vtortsev.quizapp.dto.mapper.QuestionMapper;
 import com.vtortsev.quizapp.entities.Question;
 import com.vtortsev.quizapp.service.QuestionService;
+import lombok.AllArgsConstructor;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.HttpStatus;
 import org.springframework.web.bind.annotation.*;
@@ -15,18 +16,13 @@ import java.util.stream.Collectors;
 
 @RestController // главный контролер, по запросам пользователя выводит файл ему
 @RequestMapping("/questions") //у всех заросах в этом блоке контролера будет впереди /questions
+@AllArgsConstructor
 public class QuestionController {
     // spring сам создаст бин и поместит его в переменную
     private final QuestionService questionService;
 
     private final QuestionMapper questionMapper;
 
-
-    @Autowired
-    public QuestionController(QuestionService questionService, QuestionMapper questionMapper) {
-        this.questionService = questionService;
-        this.questionMapper = questionMapper;
-    }
 
 
     @GetMapping
