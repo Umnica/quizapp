@@ -9,6 +9,7 @@ import com.vtortsev.quizapp.service.QuestionService;
 import lombok.AllArgsConstructor;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.HttpStatus;
+import org.springframework.security.access.prepost.PreAuthorize;
 import org.springframework.web.bind.annotation.*;
 
 import java.util.List;
@@ -41,6 +42,7 @@ public class QuestionController {
 
 
     @GetMapping("/category/{category}")
+    @PreAuthorize("hasAuthority('ADMIN')")
     public List<QuestionDto> getQuestionByCategory(@PathVariable String category) {
         List<Question> questions = questionService.getQuestionByCategory(category);
         return questions.stream()
