@@ -26,6 +26,7 @@ public class UserController {
     public Optional<User> findUserByName(@PathVariable String name){
         return userService.findUserByName(name);
     }
+
     @PostMapping("/save")
     //@PreAuthorize("hasAuthority('ADMIN')")
     public String saveUser(@RequestBody User user){
