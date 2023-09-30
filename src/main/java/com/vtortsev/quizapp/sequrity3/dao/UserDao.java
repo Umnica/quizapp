@@ -2,6 +2,7 @@ package com.vtortsev.quizapp.sequrity3.dao;
 
 import com.vtortsev.quizapp.sequrity3.model.User;
 import org.springframework.data.jpa.repository.JpaRepository;
+import org.springframework.data.jpa.repository.Query;
 
 import java.util.Optional;
 
