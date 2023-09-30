@@ -10,22 +10,23 @@ import java.util.Collection;
 import java.util.List;
 import java.util.stream.Collectors;
 
+
 public class UserInfoDetails implements UserDetails {
     private String name;
     private String password;
-    private List<GrantedAuthority> roles;
+    private List<GrantedAuthority> permission;
 
     public UserInfoDetails(User user){
         this.name = user.getName();
         this.password = user.getPassword();
-        this.roles = Arrays.stream(user.getRoles().split(","))
+        this.permission = Arrays.stream(user.getPermissions().split(","))
                 .map(SimpleGrantedAuthority::new)
                 .collect(Collectors.toList());
     }
 
     @Override
     public Collection<? extends GrantedAuthority> getAuthorities() {
-        return this.roles;
+        return this.permission;
     }
 
     @Override
@@ -58,3 +59,5 @@ public class UserInfoDetails implements UserDetails {
         return true;
     }
 }
+
+
