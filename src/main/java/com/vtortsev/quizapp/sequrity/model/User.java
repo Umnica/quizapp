@@ -1,4 +1,4 @@
-package com.vtortsev.quizapp.sequrity3.model;
+package com.vtortsev.quizapp.sequrity.model;
 
 import jakarta.persistence.*;
 import lombok.AllArgsConstructor;

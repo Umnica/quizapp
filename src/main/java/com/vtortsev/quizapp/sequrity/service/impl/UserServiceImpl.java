@@ -1,10 +1,9 @@
-package com.vtortsev.quizapp.sequrity3.service.impl;
+package com.vtortsev.quizapp.sequrity.service.impl;
 
-import com.vtortsev.quizapp.sequrity3.model.User;
-import com.vtortsev.quizapp.sequrity3.dao.UserDao;
-import com.vtortsev.quizapp.sequrity3.service.UserService;
+import com.vtortsev.quizapp.sequrity.model.User;
+import com.vtortsev.quizapp.sequrity.dao.UserDao;
+import com.vtortsev.quizapp.sequrity.service.UserService;
 import lombok.AllArgsConstructor;
-import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.security.crypto.password.PasswordEncoder;
 import org.springframework.stereotype.Service;
 
@@ -36,5 +35,10 @@ public class UserServiceImpl implements UserService {
             return "Пользователь успешно сохранен";
         }
         return "Попробуйте еще раз, пользователь не сохранен";
+    }
+
+    @Override
+    public void deleteUser(Integer id) {
+        userDao.deleteById(id);
     }
 }

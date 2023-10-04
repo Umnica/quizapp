@@ -1,7 +1,7 @@
-package com.vtortsev.quizapp.sequrity3.controller;
+package com.vtortsev.quizapp.sequrity.controller;
 
-import com.vtortsev.quizapp.sequrity3.model.User;
-import com.vtortsev.quizapp.sequrity3.service.UserService;
+import com.vtortsev.quizapp.sequrity.model.User;
+import com.vtortsev.quizapp.sequrity.service.UserService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.security.access.prepost.PreAuthorize;
 import org.springframework.web.bind.annotation.*;
@@ -16,8 +16,8 @@ public class UserController {
     private UserService userService;
 
     @GetMapping("/all")
-    @PreAuthorize("hasAuthority('ADMIN')")
-    public List<User> findAllUser(){
+    //@PreAuthorize("hasAuthority('ADMIN')")
+    public List<User> findAllUser() {
         return userService.findAllUsers();
     }
 
@@ -28,8 +28,11 @@ public class UserController {
     }
 
     @PostMapping("/save")
-    //@PreAuthorize("hasAuthority('ADMIN')")
     public String saveUser(@RequestBody User user){
         return userService.saveUser(user);
+    }
+    @GetMapping("/delete/{id}")
+    public void deleteUser(@PathVariable Integer id) {
+        userService.deleteUser(id);
     }
 }

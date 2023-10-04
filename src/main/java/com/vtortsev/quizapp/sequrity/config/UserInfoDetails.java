@@ -1,6 +1,6 @@
-package com.vtortsev.quizapp.sequrity3.config;
+package com.vtortsev.quizapp.sequrity.config;
 
-import com.vtortsev.quizapp.sequrity3.model.User;
+import com.vtortsev.quizapp.sequrity.model.User;
 import org.springframework.security.core.GrantedAuthority;
 import org.springframework.security.core.userdetails.UserDetails;
 import org.springframework.security.core.authority.SimpleGrantedAuthority;
@@ -14,19 +14,19 @@ import java.util.stream.Collectors;
 public class UserInfoDetails implements UserDetails {
     private String name;
     private String password;
-    private List<GrantedAuthority> permission;
+    private List<GrantedAuthority> permissions;
 
     public UserInfoDetails(User user){
         this.name = user.getName();
         this.password = user.getPassword();
-        this.permission = Arrays.stream(user.getPermissions().split(","))
+        this.permissions = Arrays.stream(user.getPermissions().split(","))
                 .map(SimpleGrantedAuthority::new)
                 .collect(Collectors.toList());
     }
 
     @Override
     public Collection<? extends GrantedAuthority> getAuthorities() {
-        return this.permission;
+        return this.permissions;
     }
 
     @Override
