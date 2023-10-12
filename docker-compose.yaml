@@ -5,7 +5,7 @@ services:
    container_name: postgres_container
    image: postgres:alpine
    environment:
-     POSTGRES_USER: ${POSTGRES_USERNAME}
+     POSTGRES_USER: ${POSTGRES_USER}
      POSTGRES_PASSWORD: ${POSTGRES_PASSWORD}
      PGDATA: /data/postgres
    volumes:
@@ -25,7 +25,7 @@ services:
 
    environment:
      SPRING_DATASOURCE_URL: jdbc:postgresql://postgres:5432/postgres
-     SPRING_DATASOURCE_USERNAME: ${POSTGRES_USERNAME}
+     SPRING_DATASOURCE_USERNAME: ${POSTGRES_USER}
      SPRING_DATASOURCE_PASSWORD: ${POSTGRES_PASSWORD}
    ports:
      - "9090:8080"
