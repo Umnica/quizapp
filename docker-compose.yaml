@@ -28,7 +28,7 @@ services:
      SPRING_DATASOURCE_USERNAME: ${DB_USERNAME}
      SPRING_DATASOURCE_PASSWORD: ${DB_PASSWORD}
    ports:
-     - "9090:8080"
+     - "8080:8080"
    depends_on:
      - postgres
    networks:
