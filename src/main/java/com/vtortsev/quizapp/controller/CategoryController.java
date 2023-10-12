@@ -6,7 +6,6 @@ import com.vtortsev.quizapp.dto.mapper.CategoryMapper;
 import com.vtortsev.quizapp.entities.Category;
 import com.vtortsev.quizapp.service.CategoryService;
 import lombok.AllArgsConstructor;
-import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.HttpStatus;
 import org.springframework.web.bind.annotation.*;
 
