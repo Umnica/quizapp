@@ -1,0 +1,47 @@
+version: '4.24.1'
+
+services:
+ postgres:
+   container_name: postgres_container
+   image: postgres:alpine
+   environment:
+     POSTGRES_USER: ${DB_USERNAME}
+     POSTGRES_PASSWORD: ${DB_PASSWORD}
+     PGDATA: /data/postgres
+   volumes:
+     - postgres:/data/postgres
+   ports:
+     - "5432:5432"
+   networks:
+     - postgres
+   restart: unless-stopped
+
+ spring-boot-app:
+   container_name: spring_boot_app_container
+   image: your_spring_boot_image:latest
+   build:
+     context: .
+     dockerfile: Dockerfile
+
+   environment:
+     SPRING_DATASOURCE_URL: jdbc:postgresql://postgres:5432/postgres
+     SPRING_DATASOURCE_USERNAME: ${DB_USERNAME}
+     SPRING_DATASOURCE_PASSWORD: ${DB_PASSWORD}
+   ports:
+     - "8080:8080"
+   depends_on:
+     - postgres
+   networks:
+     - postgres
+   #restart: unless-stopped
+
+
+networks:
+  postgres:
+    driver: bridge
+
+volumes:
+  postgres:
+  pgadmin:
+
+
